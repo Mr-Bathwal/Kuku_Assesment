@@ -2,7 +2,8 @@
  * A smoke test for the prototype, driven by a real browser.
  *
  *     npm install          # playwright-core; needs Chrome installed
- *     node tools/uitest.js
+ *     node tools/uitest.js                     # the local file
+ *     node tools/uitest.js https://host/path/  # the deployed site
  *
  * Optional, like everything in tools/ - CUTLIST itself needs none of it. But
  * the Python suite cannot press a key, and the two bugs this caught were both
@@ -18,8 +19,11 @@
 const { chromium } = require('playwright-core');
 const path = require('path');
 
-const PAGE = 'file:///' + path.resolve(__dirname, '..', 'web', 'index.html')
-  .split(path.sep).join('/');
+// Defaults to the local file, which is how the brief says a reviewer opens
+// it. Pass a URL to run the same checks against the deployed site.
+const PAGE = process.argv[2] ||
+  ('file:///' + path.resolve(__dirname, '..', 'web', 'index.html')
+    .split(path.sep).join('/'));
 
 const results = [];
 const check = (name, pass, detail) => results.push({ name, pass: !!pass, detail });
@@ -59,7 +63,8 @@ async function run() {
     wall: document.getElementById('wallCanvas')?.width || 0,
     ticker: document.querySelector('.ticker .v')?.textContent,
   }));
-  check('boots from file:// with no console errors', errors.length === 0, errors[0]);
+  check(`boots from ${PAGE.startsWith('file:') ? 'file://' : new URL(PAGE).host} with no console errors`,
+    errors.length === 0, errors[0]);
   check('page data is the pipeline payload', built.data && built.desk);
   check('one film cell per episode', built.episodes === built.rows + 30 || built.episodes > 0,
     `${built.episodes} cells`);
