@@ -655,7 +655,20 @@ window.addEventListener('keydown', e => {
     return;
   }
   if (e.key === '?' || (e.shiftKey && e.key === '/')) { e.preventDefault(); return toggleSheet('#shortcuts'); }
-  if (e.key === 'Escape') { toggleSheet('#shortcuts', false); return; }
+
+  /* Escape has exactly one owner, and it is this handler.
+     It used to have two: this one closed the overlay, and the film's own
+     listener then saw nothing open and left the desk entirely - so dismissing
+     the shortcuts panel threw you back to the top of the page and lost your
+     place in the queue. Dismiss first, leave only if there was nothing to
+     dismiss. Deciding it here rather than by stopping propagation means it
+     does not depend on which script was loaded first. */
+  if (e.key === 'Escape') {
+    e.preventDefault();
+    if (!$('#shortcuts').hidden) { toggleSheet('#shortcuts', false); return; }
+    if (window.CUTLIST_FILM) window.CUTLIST_FILM.backToFilm();
+    return;
+  }
   if (!$('#shortcuts').hidden) return;
 
   switch (e.key) {

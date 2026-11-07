@@ -30,6 +30,7 @@ python -m cutlist eval data/scripts          # the quality numbers
 python -m cutlist run data/sample --out out-sample --show "The Last Shift" --top 6 --no-web
 
 python -m unittest discover tests            # 44 tests
+node tools/uitest.js                         # 25 browser checks (optional)
 open web/index.html                          # the prototype
 ```
 

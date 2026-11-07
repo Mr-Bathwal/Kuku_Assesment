@@ -854,15 +854,9 @@
       });
     }
 
-    window.addEventListener('keydown', e => {
-      if (e.metaKey || e.ctrlKey || e.altKey) return;
-      const onDesk = document.body.classList.contains('desk-mode');
-      if (e.key === 'Escape' && onDesk) {
-        // the desk's own overlays get Escape first
-        if (!$('#shortcuts').hidden || !$('#palette').hidden) return;
-        e.preventDefault(); backToFilm();
-      }
-    });
+    /* Escape while the desk is up belongs to app.js, which dismisses an open
+       overlay first and calls backToFilm() only when there was nothing to
+       dismiss. Two listeners both acting on one key is what broke it. */
 
     document.addEventListener('visibilitychange', () => { if (!document.hidden) request(); });
     request();
