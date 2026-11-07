@@ -1,0 +1,581 @@
+/* ==========================================================================
+   CUTLIST - film.css
+   Act I: the scroll film. Act II (the review desk) lives in app.css and is
+   deliberately quieter - a tool should not be atmospheric while you work in
+   it. Shared tokens are declared in app.css; this sheet loads after it and
+   adds only what the film needs.
+
+   Two rules hold the whole thing together:
+
+     1. Nothing on screen is decorative data. Every number, curve and lit
+        cell is read from window.CUTLIST_DATA, which is written by the same
+        run that wrote the EDLs.
+
+     2. No raster images. The texture is a canvas (backdrop.js), the
+        perforations are an inline SVG pattern, and the frames are the
+        episodes own pressure curves. There is no video of this show, so
+        there are no stills - pretending otherwise would be the one lie the
+        whole submission exists to avoid.
+   ========================================================================== */
+
+:root {
+  --film:#07070C;          /* between frames - darker than the page */
+  --emulsion:#0B0C14;      /* inside a frame */
+
+  /* One easing curve for the whole film. This is the curve Linear ships for
+     every transform and opacity transition in its product - measured off
+     their served CSS, not guessed - and a single curve is most of why a
+     product reads as one piece of work. A cut is the exception: any ease on
+     a cut destroys it, so cuts are linear and stepped. */
+  --ease:cubic-bezier(.32,.72,0,1);
+  --ease-cut:linear;
+  --rise:620ms var(--ease);
+
+  --gutter:clamp(20px, 5vw, 76px);
+  --measure:1180px;
+}
+
+/* --------------------------------------------------------------------------
+   PAGE MODES
+   The film scrolls; the desk does not. Switching mode changes which element
+   owns the viewport, so each can assume it has the viewport to itself.
+   -------------------------------------------------------------------------- */
+
+body.film-mode {
+  display:block;
+  overflow-x:hidden;
+  overflow-y:auto;
+  background:var(--film);
+}
+body.film-mode #desk { display:none; }
+
+body.desk-mode { display:grid; grid-template-rows:auto minmax(0,1fr); overflow:hidden; }
+body.desk-mode #film,
+body.desk-mode #hud { display:none; }
+body.desk-mode #desk { display:contents; }
+
+/* z-index:0 still makes this a positioned element, which paints above every
+   statically-positioned block on the page. Both acts therefore have to lift
+   themselves over it explicitly - the desk's cards are static, and without
+   this they render perfectly and are then covered by the atmosphere. */
+#bd {
+  position:fixed; inset:0; width:100%; height:100%;
+  z-index:0; pointer-events:none;
+}
+body.desk-mode .topbar,
+body.desk-mode .workspace { position:relative; z-index:1; }
+
+/* The splice. One white frame and a 3px jump - what a cut actually looks
+   like when the projector hits a bad join. 150ms, then gone. */
+#splice {
+  position:fixed; inset:0; z-index:9000; pointer-events:none;
+  background:#EDEDF2; opacity:0;
+}
+body.cutting #splice { animation:splice 150ms steps(3,end) forwards; }
+body.cutting #film, body.cutting #desk { animation:jump 150ms var(--ease-cut); }
+@keyframes splice { 0% { opacity:.86 } 40% { opacity:.30 } 100% { opacity:0 } }
+@keyframes jump { 0% { transform:translateY(0) } 33% { transform:translateY(-3px) } 100% { transform:translateY(0) } }
+@media (prefers-reduced-motion:reduce) {
+  body.cutting #splice { animation:none; }
+  body.cutting #film, body.cutting #desk { animation:none; }
+}
+
+/* --------------------------------------------------------------------------
+   HUD - fixed, thin, always available.
+   -------------------------------------------------------------------------- */
+
+#hud {
+  position:fixed; top:0; left:0; right:0; z-index:500;
+  display:flex; align-items:center; gap:14px;
+  padding:0 var(--gutter); height:54px;
+  background:linear-gradient(to bottom, rgba(7,7,12,.95), rgba(7,7,12,0));
+  -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+}
+.hud-mark { display:flex; align-items:baseline; gap:9px; }
+.hud-mark b { font-weight:590; letter-spacing:.13em; font-size:12px; color:var(--g80); }
+.hud-mark span { font-size:11px; color:var(--g50); letter-spacing:-.01em; }
+.hud-spacer { flex:1; }
+
+.hud-prog { display:flex; align-items:center; gap:8px; }
+.hud-prog .bar { width:116px; height:2px; background:var(--g20); position:relative; overflow:hidden; }
+.hud-prog .bar i { position:absolute; top:0; bottom:0; left:0; background:var(--g60); width:0; }
+.hud-prog .pct { font-family:var(--mono); font-size:10px; color:var(--g50); width:32px; text-align:right; }
+
+.hud-btn {
+  display:inline-flex; align-items:center; gap:7px;
+  height:28px; padding:0 11px; border-radius:7px;
+  font-size:12px; font-weight:510; color:var(--g70);
+  background:rgba(255,255,255,.03); box-shadow:var(--ring);
+  transition:color var(--t), background var(--t);
+}
+.hud-btn:hover { color:var(--g100); background:rgba(255,255,255,.07); }
+.hud-btn .kbd { font-family:var(--mono); font-size:10px; color:var(--g50); }
+
+/* --------------------------------------------------------------------------
+   SCENES
+   -------------------------------------------------------------------------- */
+
+#film { position:relative; z-index:1; }
+
+.scene {
+  position:relative;
+  min-height:100vh;
+  padding:112px var(--gutter) 96px;
+  display:flex; flex-direction:column; justify-content:center;
+}
+.scene-in { width:100%; max-width:var(--measure); margin:0 auto; }
+
+.slug {
+  display:flex; align-items:center; gap:10px;
+  font-size:11px; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--g50); font-weight:510; margin-bottom:26px;
+}
+.slug i { display:block; width:22px; height:1px; background:var(--g30); }
+.slug em { font-style:normal; font-family:var(--mono); color:var(--g40); letter-spacing:0; }
+
+h2.display {
+  font-size:clamp(34px, 4.6vw, 64px);
+  font-weight:300; line-height:1.02; letter-spacing:-.035em;
+  color:var(--g100); max-width:19em;
+}
+h2.display b { font-weight:510; color:#fff; }
+h2.display .q { color:var(--g50); font-weight:300; }
+
+p.lead {
+  font-size:clamp(16px, 1.25vw, 19px); line-height:1.58; letter-spacing:-.012em;
+  color:var(--g70); max-width:60ch; margin-top:22px;
+}
+p.lead b { color:var(--g80); font-weight:510; }
+p.lead .mono { color:var(--g80); font-size:.94em; }
+
+.note {
+  font-size:12px; line-height:1.55; color:var(--g50); max-width:62ch;
+  margin-top:20px; padding-left:13px; border-left:1px solid var(--g20);
+}
+.note b { color:var(--g70); font-weight:510; }
+
+/* Staggered rise, via IntersectionObserver rather than view-timeline: this
+   page has to behave the same opened from file:// in whatever the reviewer
+   happens to have. */
+[data-reveal] { opacity:0; transform:translateY(16px); }
+[data-reveal].seen { opacity:1; transform:none; transition:opacity var(--rise), transform var(--rise); }
+@media (prefers-reduced-motion:reduce) {
+  [data-reveal] { opacity:1; transform:none; }
+}
+
+/* --------------------------------------------------------------------------
+   SCENE 1 - ACADEMY LEADER
+   -------------------------------------------------------------------------- */
+
+.leader-grid {
+  display:grid; grid-template-columns:minmax(0,1fr) auto; gap:clamp(32px,6vw,90px);
+  align-items:center;
+}
+@media (max-width:900px) { .leader-grid { grid-template-columns:1fr; } }
+
+.title-stack h1 {
+  font-size:clamp(58px, 11vw, 148px);
+  font-weight:300; letter-spacing:-.055em; line-height:.86;
+  color:#fff; margin:0 0 4px;
+}
+.title-stack h1 span { color:var(--g40); }
+.title-rule { height:1px; background:linear-gradient(to right, var(--g30), transparent); margin:26px 0 22px; }
+.title-sub { font-size:clamp(16px,1.5vw,21px); color:var(--g70); font-weight:300; letter-spacing:-.018em; }
+.title-sub b { color:var(--g100); font-weight:510; }
+
+.ticker { display:flex; flex-wrap:wrap; gap:0; margin-top:34px; }
+.ticker .t { padding-right:20px; margin-right:20px; border-right:1px solid var(--g20); }
+.ticker .t:last-child { border-right:0; }
+.ticker .t .v {
+  display:block; font-family:var(--mono); font-size:clamp(19px,2vw,26px);
+  color:var(--num); letter-spacing:-.02em; font-variant-numeric:tabular-nums;
+}
+.ticker .t .k { display:block; font-size:10.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--g50); margin-top:5px; }
+
+.leader-art { position:relative; width:clamp(190px, 25vw, 310px); aspect-ratio:1; }
+.leader-art canvas { width:100%; height:100%; display:block; }
+
+.scroll-cue {
+  position:absolute; left:var(--gutter); bottom:40px;
+  display:flex; align-items:center; gap:10px;
+  font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:var(--g40);
+}
+.scroll-cue i {
+  display:block; width:1px; height:34px;
+  background:linear-gradient(to bottom, var(--g30), transparent);
+  animation:cue 2.4s var(--ease) infinite;
+  transform-origin:top;
+}
+@keyframes cue { 0%,100% { transform:scaleY(.4); opacity:.4 } 50% { transform:scaleY(1); opacity:1 } }
+@media (prefers-reduced-motion:reduce) { .scroll-cue i { animation:none; } }
+
+/* --------------------------------------------------------------------------
+   SCENE 2 - THE SPEND
+   -------------------------------------------------------------------------- */
+
+.split {
+  display:grid; grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);
+  gap:clamp(30px,5vw,72px); align-items:start; margin-top:48px;
+}
+@media (max-width:1000px) { .split { grid-template-columns:1fr; } }
+
+.bignum {
+  font-family:var(--mono); font-size:clamp(44px,6.6vw,88px); line-height:.92;
+  letter-spacing:-.05em; color:#fff; font-variant-numeric:tabular-nums;
+}
+.bignum sub {
+  font-size:.19em; letter-spacing:.01em; color:var(--g50);
+  vertical-align:baseline; margin-left:.6em; font-family:var(--sans); bottom:0;
+}
+
+.figrow { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--g15); margin-top:30px; }
+.figrow .fig { background:var(--film); padding:16px 18px; }
+.figrow .fig .v { font-family:var(--mono); font-size:21px; color:var(--num); letter-spacing:-.025em; }
+.figrow .fig .k { font-size:11px; color:var(--g50); margin-top:6px; line-height:1.4; }
+
+.creative-field {
+  display:grid; grid-template-columns:repeat(var(--cols,48), 1fr); gap:1.5px;
+}
+.creative-field i { display:block; aspect-ratio:9/16; background:var(--g12); }
+.creative-field i.lit { background:var(--accent); box-shadow:0 0 5px rgba(113,112,255,.5); }
+.field-cap { display:flex; justify-content:space-between; gap:16px; margin-top:14px; font-size:11.5px; color:var(--g50); }
+.field-cap b { color:var(--g70); font-weight:510; }
+
+/* --------------------------------------------------------------------------
+   SCENE 3 - THE REEL. 50 episodes, 3D, scroll-driven.
+   -------------------------------------------------------------------------- */
+
+#s-reel { padding:0; min-height:0; display:block; }
+.reel-track { height:420vh; position:relative; }
+.reel-sticky {
+  position:sticky; top:0; height:100vh;
+  display:grid; grid-template-rows:auto minmax(0,1fr) auto auto;
+  padding:66px 0 26px; overflow:hidden;
+}
+.reel-head { padding:0 var(--gutter); }
+.reel-head .slug { margin-bottom:12px; }
+.reel-head h2 { font-size:clamp(22px,2.3vw,31px); font-weight:300; letter-spacing:-.03em; color:var(--g100); }
+.reel-head h2 b { font-weight:510; color:#fff; }
+
+/* Perspective is a lens: vFOV = 2*atan(viewportHeight / 2*perspective). At a
+   1000px viewport, 800px is a 64deg wide-angle and is exactly why 3D card
+   decks on the web fan out and look wrong. 2200px is ~26deg - a 53mm lens -
+   which is why this strip recedes instead of splaying. */
+/* overflow clips the reel to its own band so the near end of the strip stops
+   climbing into the heading. It is safe here: the flattening rule applies to
+   transform-style on the element that carries the grouping property, and
+   this element carries perspective, which still establishes the 3D context
+   for its children. Verified in the browser, not assumed. */
+.reel-stage {
+  position:relative; overflow:hidden;
+  perspective:2200px; perspective-origin:50% 42%;
+}
+
+/* The strip is one flat, straight piece of film, rotated away from the
+   camera and slid along its own axis. That means ONE transform write per
+   frame for the whole reel instead of fifty, and it is also what film
+   actually does: it does not bend to flatter the viewer. */
+.reel-rail {
+  position:absolute; top:50%; left:50%;
+  transform-style:preserve-3d; will-change:transform;
+}
+
+/* Depth cueing by screen position rather than by index, so no per-card
+   opacity is written on any frame. The overlay sits outside the 3D context
+   - opacity on an ancestor of a preserve-3d element silently forces it flat. */
+/* Asymmetric on purpose. The strip runs toward the camera, so the left end
+   is a near frame leaving the shot and gets cut hard, while the right end is
+   genuine distance and is allowed to fall away. The second layer is the lamp
+   over the light table, which is most of what makes celluloid look like
+   celluloid. */
+.reel-fade {
+  position:absolute; left:0; top:0; right:0; bottom:0; z-index:40; pointer-events:none;
+  background:
+    radial-gradient(130% 62% at 50% -12%, rgba(176,186,255,.06), transparent 62%),
+    linear-gradient(to right,
+      var(--film) 0%, rgba(7,7,12,.93) 5%, rgba(7,7,12,0) 21%,
+      rgba(7,7,12,0) 57%, rgba(7,7,12,.5) 81%, rgba(7,7,12,.95) 96%, var(--film) 100%);
+}
+
+/* ---- one cell of 3-perf 35mm -------------------------------------------
+   Geometry is SMPTE ST 139-2003 Table 1, normalised to film width, and
+   derived in reel.js from a single px-per-mm scale. 3-perf is the real
+   economy pulldown used for television origination, and it is the one that
+   lands honestly here: a 3-perf pitch of 14.22mm against the 25.0mm usable
+   width between the perforations is 9:16 to within a tenth of a
+   millimetre. So an upright vertical frame in 35mm is not a liberty - it is
+   what you would actually shoot a microdrama on.
+   ----------------------------------------------------------------------- */
+.fr {
+  position:absolute; top:50%; left:0;
+  width:var(--cell-w); height:var(--cell-h);
+  margin-top:calc(var(--cell-h) / -2);
+  background:#08080E;
+  backface-visibility:hidden;
+}
+.fr::before, .fr::after {
+  content:""; position:absolute; left:0; right:0; height:var(--perf-band);
+  background-image:var(--perf-svg);
+  background-repeat:repeat-x; background-size:var(--perf-pitch) 100%;
+}
+.fr::before { top:0; }
+.fr::after { bottom:0; transform:scaleY(-1); }
+
+.fr .em {
+  position:absolute; overflow:hidden;
+  left:var(--pic-x); right:var(--pic-x); top:var(--pic-y); bottom:var(--pic-y);
+  background:var(--emulsion);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.05);
+  transition:box-shadow 240ms var(--ease);
+}
+.fr.focus .em {
+  box-shadow:inset 0 0 0 1px rgba(113,112,255,.46), 0 0 26px rgba(113,112,255,.18);
+}
+.fr .fr-no {
+  position:absolute; top:6px; left:7px; z-index:3;
+  font-family:var(--mono); font-size:10px; letter-spacing:.04em; color:var(--g60);
+}
+.fr svg { position:absolute; left:0; top:0; width:100%; height:100%; }
+.fr .fr-win {
+  position:absolute; top:0; bottom:0; z-index:2;
+  background:rgba(113,112,255,.12);
+  box-shadow:inset 1px 0 0 rgba(113,112,255,.65), inset -1px 0 0 rgba(113,112,255,.65);
+}
+.fr .fr-rank {
+  position:absolute; bottom:6px; left:7px; z-index:3;
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.06em; color:var(--accent);
+}
+
+.reel-read {
+  padding:22px var(--gutter) 0; display:grid;
+  grid-template-columns:auto minmax(0,1fr) auto; gap:clamp(18px,3vw,44px);
+  align-items:start; min-height:96px;
+}
+.reel-read .rr-no { font-family:var(--mono); font-size:clamp(28px,3.6vw,48px); line-height:.9; color:#fff; letter-spacing:-.045em; }
+.reel-read .rr-no span { color:var(--g40); font-size:.4em; letter-spacing:.02em; }
+.reel-read .rr-log { font-size:13.5px; line-height:1.52; color:var(--g70); max-width:78ch; }
+.reel-read .rr-log .em { color:var(--g100); }
+.reel-read .rr-stats { display:flex; }
+.reel-read .rr-stats .s { padding-left:18px; margin-left:18px; border-left:1px solid var(--g20); }
+.reel-read .rr-stats .s:first-child { border-left:0; margin-left:0; padding-left:0; }
+.reel-read .rr-stats .v { display:block; font-family:var(--mono); font-size:15px; color:var(--num); }
+.reel-read .rr-stats .k { display:block; font-size:10px; letter-spacing:.07em; text-transform:uppercase; color:var(--g50); margin-top:4px; }
+
+.reel-mix { display:flex; height:3px; width:210px; margin-top:12px; overflow:hidden; border-radius:2px; }
+.reel-mix i { display:block; height:100%; }
+.reel-mixkey { margin-top:6px; font-size:10px; letter-spacing:.05em; text-transform:uppercase; color:var(--g40); }
+
+.reel-scrub { padding:16px var(--gutter) 0; }
+.reel-scrub .sc { position:relative; height:20px; }
+.reel-scrub .ticks { position:absolute; left:0; right:0; bottom:0; height:14px; display:flex; }
+.reel-scrub .ticks i { flex:1; height:100%; background:linear-gradient(to top, var(--g20), transparent); }
+.reel-scrub .ticks i.has { background:linear-gradient(to top, var(--g40), transparent); }
+.reel-scrub .ticks i.on { background:linear-gradient(to top, var(--accent), transparent); }
+.reel-scrub .cursor {
+  position:absolute; bottom:0; width:1px; height:20px; background:var(--g80);
+  box-shadow:0 0 8px rgba(255,255,255,.33);
+}
+
+/* --------------------------------------------------------------------------
+   SCENE 4 - PIPELINE
+   -------------------------------------------------------------------------- */
+
+.pipe { margin-top:52px; position:relative; }
+.pipe-rail { position:absolute; left:0; right:0; top:64px; height:1px; background:var(--g15); }
+.pipe-rail i { position:absolute; top:0; bottom:0; left:0; width:0; background:linear-gradient(to right,var(--g40),var(--accent)); }
+.pipe-row { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:clamp(8px,1.4vw,18px); align-items:stretch; }
+/* the stage descriptions run to different line counts, so the figures are
+   pushed to a common baseline instead of floating wherever the prose ends */
+.pipe-st { position:relative; display:flex; flex-direction:column; }
+.pipe-st .out { margin-top:auto; }
+.pipe-st .dot {
+  width:9px; height:9px; border-radius:50%; background:var(--g20);
+  box-shadow:0 0 0 4px var(--film); margin-top:60px; position:relative; z-index:2;
+  transition:background 300ms var(--ease), box-shadow 300ms var(--ease);
+}
+.pipe-st.on .dot { background:var(--accent); box-shadow:0 0 0 4px var(--film), 0 0 14px rgba(113,112,255,.6); }
+.pipe-st .n { position:absolute; top:0; left:0; font-family:var(--mono); font-size:10px; color:var(--g40); }
+.pipe-st .nm { margin-top:16px; font-size:14px; font-weight:510; color:var(--g80); letter-spacing:-.014em; }
+.pipe-st.key .nm { color:var(--g100); }
+.pipe-st .ds { margin-top:7px; font-size:12px; line-height:1.5; color:var(--g50); }
+.pipe-st .out {
+  margin-top:13px; font-family:var(--mono); font-size:12px; color:var(--num);
+  padding-top:11px; border-top:1px solid var(--g15);
+}
+.pipe-st .out span { color:var(--g50); }
+
+/* --------------------------------------------------------------------------
+   SCENE 5 - THE GROUNDING WALL
+   -------------------------------------------------------------------------- */
+
+.wall-box {
+  position:relative; background:#05050A; margin-top:44px;
+  box-shadow:var(--ring); border-radius:3px; padding:13px;
+}
+.wall-box canvas { display:block; width:100%; height:auto; }
+.wall-legend { display:flex; flex-wrap:wrap; gap:22px; margin-top:18px; font-size:11.5px; color:var(--g50); }
+.wall-legend .lg { display:flex; align-items:center; gap:7px; }
+.wall-legend .lg i { width:9px; height:9px; }
+.wall-legend .lg b { color:var(--g80); font-family:var(--mono); font-weight:400; }
+.wall-callout {
+  margin-top:30px; display:grid; grid-template-columns:auto minmax(0,1fr);
+  gap:clamp(20px,3vw,40px); align-items:center; padding-top:22px; border-top:1px solid var(--g15);
+}
+.wall-callout .pc { font-family:var(--mono); font-size:clamp(36px,5vw,66px); line-height:.9; color:#fff; letter-spacing:-.045em; }
+.wall-callout .pc em { font-style:normal; font-size:.34em; color:var(--g50); }
+.wall-callout p { font-size:14.5px; line-height:1.55; color:var(--g70); max-width:58ch; }
+@media (max-width:760px) { .wall-callout { grid-template-columns:1fr; } }
+
+/* --------------------------------------------------------------------------
+   SCENE 6 - THE CUT LIST
+   -------------------------------------------------------------------------- */
+
+.sheet-stage { margin-top:44px; perspective:2600px; perspective-origin:50% 0%; }
+.sheet-grid {
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(148px,1fr));
+  gap:clamp(10px,1.5vw,20px);
+  transform:rotateX(7deg);
+  transform-style:preserve-3d;
+  transition:transform 760ms var(--ease);
+}
+.sheet-stage.flat .sheet-grid { transform:none; }
+@media (prefers-reduced-motion:reduce) { .sheet-grid { transform:none; } }
+
+/* A button centres its content box vertically, so cards whose hook line runs
+   to one line instead of three used to sit 14px lower than their neighbours.
+   Column flex with a growing footer pins every frame to the same top edge. */
+.cut {
+  position:relative; display:flex; flex-direction:column; align-items:stretch;
+  width:100%; text-align:left;
+  background:var(--emulsion); border-radius:2px; overflow:hidden;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.055), 0 14px 30px -16px #000;
+  transition:box-shadow 260ms var(--ease), transform 260ms var(--ease);
+}
+.cut:hover, .cut:focus-visible {
+  box-shadow:inset 0 0 0 1px rgba(113,112,255,.33), 0 0 0 1px rgba(113,112,255,.13), 0 30px 56px -20px #000;
+  outline:none; z-index:5;
+}
+/* aspect-ratio does nothing on an inline box, and these are spans because a
+   <button> may not contain a <div>. */
+.cut .art { display:block; flex:0 0 auto; position:relative; aspect-ratio:9/16; }
+.cut .art svg { position:absolute; left:0; top:0; width:100%; height:100%; }
+.cut .art .win {
+  position:absolute; top:0; bottom:0; background:rgba(113,112,255,.13);
+  box-shadow:inset 1px 0 0 rgba(113,112,255,.8), inset -1px 0 0 rgba(113,112,255,.8);
+}
+.cut .art .glare {
+  position:absolute; left:0; top:0; right:0; bottom:0; opacity:0; pointer-events:none;
+  background:radial-gradient(220px 220px at var(--mx,50%) var(--my,50%), rgba(255,255,255,.09), transparent 70%);
+  transition:opacity 220ms var(--ease);
+}
+.cut:hover .art .glare { opacity:1; }
+.cut .hd { position:absolute; top:0; left:0; right:0; display:flex; justify-content:space-between; padding:8px 9px; z-index:3; }
+.cut .hd .id { font-family:var(--mono); font-size:10px; color:var(--g60); letter-spacing:.04em; }
+.cut .hd .sc { font-family:var(--mono); font-size:13px; color:#fff; letter-spacing:-.02em; }
+.cut .ft { display:block; flex:1 1 auto; position:relative; padding:11px 10px 12px; background:#0A0A11; }
+.cut .ft .ep { display:block; font-family:var(--mono); font-size:10px; color:var(--accent); letter-spacing:.05em; }
+.cut .ft .tcs { display:block; margin-top:3px; font-family:var(--mono); font-size:9.5px; color:var(--g40); letter-spacing:0; }
+.cut .ft .hk {
+  margin-top:5px; font-size:11.5px; line-height:1.42; color:var(--g70);
+  display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;
+}
+.cut .stitch {
+  position:absolute; bottom:8px; right:9px; z-index:3;
+  font-family:var(--mono); font-size:8.5px; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--sfx); padding:2px 5px; border-radius:2px;
+  background:#1a1024; box-shadow:inset 0 0 0 1px rgba(190,140,233,.24);
+}
+
+.enter-row { display:flex; flex-wrap:wrap; align-items:center; gap:18px; margin-top:42px; }
+.enter {
+  display:inline-flex; align-items:center; gap:12px;
+  height:44px; padding:0 20px; border-radius:9px;
+  font-size:14px; font-weight:510; letter-spacing:-.012em; color:#fff;
+  background:linear-gradient(180deg,#2b2a52,#1b1b32);
+  box-shadow:0 0 0 1px rgba(113,112,255,.3), 0 10px 26px -12px rgba(113,112,255,.5);
+  transition:transform 180ms var(--ease), box-shadow 180ms var(--ease);
+}
+.enter:hover { transform:translateY(-1px); box-shadow:0 0 0 1px rgba(113,112,255,.5), 0 16px 34px -14px rgba(113,112,255,.62); }
+.enter .kbd { font-family:var(--mono); font-size:11px; color:#b9b8ff; }
+.enter-note { font-size:12px; color:var(--g50); max-width:48ch; line-height:1.5; }
+
+/* --------------------------------------------------------------------------
+   COLOPHON
+   -------------------------------------------------------------------------- */
+
+.colophon { padding:84px var(--gutter) 60px; border-top:1px solid var(--g15); background:#05050A; position:relative; z-index:1; }
+.colophon-in { max-width:var(--measure); margin:0 auto; display:grid; grid-template-columns:minmax(0,1fr) auto; gap:clamp(40px,7vw,110px); align-items:start; }
+.colophon .cx { font-size:12.5px; line-height:1.65; color:var(--g50); max-width:74ch; }
+.colophon .cx b { color:var(--g70); font-weight:510; }
+.colophon .cx p + p { margin-top:12px; }
+.colophon .cx code { font-family:var(--mono); font-size:.92em; color:var(--g70); }
+.colophon .stamp { font-family:var(--mono); font-size:10.5px; color:var(--g30); text-align:right; line-height:1.9; white-space:nowrap; }
+
+/* --------------------------------------------------------------------------
+   DESK RETURN
+   -------------------------------------------------------------------------- */
+
+.deskback {
+  flex:0 0 auto;
+  display:inline-flex; align-items:center; gap:7px; height:26px; padding:0 9px;
+  border-radius:6px; font-size:12px; font-weight:510; color:var(--g60);
+  background:rgba(255,255,255,.03); box-shadow:var(--ring);
+  transition:color var(--t), background var(--t);
+}
+.deskback:hover { color:var(--g100); background:rgba(255,255,255,.08); }
+
+/* The desk topbar needs about 1600px to show everything at once. Below that
+   it sheds the least load-bearing parts in order - the per-run metadata
+   first, then the colour key, which is also printed under the timeline -
+   rather than pushing the export button off the end of the bar. */
+.tb-right { min-width:0; }
+@media (max-width:1560px) { .topbar .stats { display:none; } }
+@media (max-width:1180px) { .topbar .legend, .topbar .tb-rule { display:none; } }
+@media (max-width:960px)  { .topbar .hint { display:none; } }
+
+/* Below this the two-pane desk cannot hold its shape: the score bars alone
+   have a 160px floor and the list wants 360. So the panes stack, the list
+   becomes a short scroller over the top, and the detail keeps the rest. It
+   is a cramped way to review promos and it is not what the desk is for, but
+   it beats 167px of horizontal overflow on a reviewer's phone. */
+@media (max-width:760px) {
+  .topbar { gap:10px; padding:0 10px; }
+  .topbar .tally { display:none; }
+  .topbar .show { font-size:13px; overflow:hidden; text-overflow:ellipsis; }
+  .tb-left { min-width:0; flex:1 1 auto; }
+
+  .workspace { grid-template-columns:minmax(0,1fr); grid-template-rows:184px minmax(0,1fr); }
+  .list-pane { border-right:0; box-shadow:0 1px 0 #000, 0 2px 0 rgba(255,255,255,.04); }
+  .detail-scroll { padding:12px 10px 16px; }
+  .sb { grid-template-columns:64px minmax(0,1fr) 24px 24px; gap:8px; }
+  .actionbar .chips { display:none; }
+}
+
+/* --------------------------------------------------------------------------
+   THE DESK, STILL A TOOL
+   The film can afford atmosphere. The desk cannot: an editor crosses these
+   twenty promos dozens of times a day, and anything that flashes on every
+   move becomes something to endure. So the only motion here is the score
+   bars and the beat list arriving in order - enough to tell you the pane
+   changed, short enough that you stop noticing it by the third promo.
+   -------------------------------------------------------------------------- */
+
+.sb .fill { transition:width 560ms var(--ease); }
+
+.beat { animation:beatin 320ms var(--ease) both; animation-delay:calc(var(--bi, 0) * 11ms); }
+@keyframes beatin { from { opacity:0; transform:translateY(5px) } to { opacity:1; transform:none } }
+
+@media (prefers-reduced-motion:reduce) {
+  .sb .fill { transition:none; }
+  .beat { animation:none; }
+}
+
+@media (max-width:760px) {
+  .figrow { grid-template-columns:1fr; }
+  .pipe-row { grid-template-columns:repeat(2,minmax(0,1fr)); row-gap:30px; }
+  .pipe-rail { display:none; }
+  .reel-read { grid-template-columns:1fr; gap:14px; }
+  .reel-read .rr-stats { flex-wrap:wrap; }
+  .colophon-in { grid-template-columns:1fr; }
+  .colophon .stamp { text-align:left; }
+}

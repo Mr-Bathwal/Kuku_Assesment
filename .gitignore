@@ -1,0 +1,28 @@
+# Nothing here is needed to run the tool: it is standard library only.
+node_modules/
+__pycache__/
+*.pyc
+
+# Build/preview artefacts
+docs/_solution.html
+*.tmp.png
+
+# ---------------------------------------------------------------------------
+# CONFIDENTIALITY
+#
+# The brief is explicit: "The input pack is Kuku's own content, shared just
+# for this assignment. You're welcome to use it with AI tools for your work,
+# but please don't publish or share it." This repository is public, so:
+#
+#   - the screenplays themselves never leave this machine.
+#   - all-candidates.json is every one of the 156 windows with all their
+#     beats, which is 38% of the pack reproduced verbatim. It is a debug
+#     artefact, not one of the required deliverables, so it stays local.
+#
+# What does go up is out/promos.json and the files beside it: the twenty
+# exported promos. The brief requires "a folder of unedited outputs from
+# running your solution", and those outputs quote 4.5% of the pack - the
+# least that can be published and still hand over a working deliverable.
+# ---------------------------------------------------------------------------
+data/scripts/*.txt
+out/all-candidates.json

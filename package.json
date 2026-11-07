@@ -1,0 +1,8 @@
+{
+  "name": "cutlist-tools",
+  "private": true,
+  "description": "Optional tooling only. CUTLIST itself is Python standard library and has no dependencies.",
+  "devDependencies": {
+    "playwright-core": "^1.65.0"
+  }
+}

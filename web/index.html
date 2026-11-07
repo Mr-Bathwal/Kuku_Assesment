@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CUTLIST &mdash; promo cut sheets, straight from the screenplay</title>
+<meta name="description" content="Finds the best 20-60s promo clips in a microdrama screenplay and returns exact, verifiable cut points.">
+<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="film.css">
+<!-- inline, so opening this from a folder does not hunt for a file that is not there -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%230D0D18'/%3E%3Crect x='5' y='2' width='6' height='12' fill='%237170ff'/%3E%3Crect x='2' y='4' width='2' height='2' rx='.6' fill='%23A3A4BF'/%3E%3Crect x='2' y='10' width='2' height='2' rx='.6' fill='%23A3A4BF'/%3E%3Crect x='12' y='4' width='2' height='2' rx='.6' fill='%23A3A4BF'/%3E%3Crect x='12' y='10' width='2' height='2' rx='.6' fill='%23A3A4BF'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<canvas id="bd" aria-hidden="true"></canvas>
+<div id="splice" aria-hidden="true"></div>
+
+<!-- ============================== HUD ============================== -->
+<header id="hud">
+  <span class="hud-mark"><b>CUTLIST</b><span data-v="mShow">&mdash;</span></span>
+  <span class="hud-spacer"></span>
+  <span class="hud-prog" aria-hidden="true">
+    <span class="bar"><i id="hudBar"></i></span>
+    <span class="pct" id="hudPct">0%</span>
+  </span>
+  <button class="hud-btn" type="button" data-open-desk="0">
+    Open the review desk <span class="kbd">&rarr;</span>
+  </button>
+</header>
+
+<!-- ============================== ACT I ============================== -->
+<main id="film">
+
+  <!-- ---------------------------- 1. LEADER --------------------------- -->
+  <section class="scene" id="s-leader">
+    <div class="scene-in leader-grid">
+      <div class="title-stack">
+        <h1 data-reveal>CUT<span>LIST</span></h1>
+        <div class="title-rule" data-reveal data-reveal-delay></div>
+        <p class="title-sub" data-reveal="90">
+          Twenty promos, cut out of fifty episodes of
+          <b data-v="mShow">&mdash;</b>. Every in- and out-point is a beat
+          boundary lifted from the screenplay, so there is no cut point in
+          this list that a language model could have invented.
+        </p>
+        <div class="ticker" data-reveal="170">
+          <span class="t"><span class="v" data-v="mEpisodes">&mdash;</span><span class="k">episodes</span></span>
+          <span class="t"><span class="v" data-v="mBeats">&mdash;</span><span class="k">beats</span></span>
+          <span class="t"><span class="v" data-v="mRuntime">&mdash;</span><span class="k">min of script</span></span>
+          <span class="t"><span class="v" data-v="mVerified">&mdash;</span><span class="k">verified cuts</span></span>
+          <span class="t"><span class="v" data-v="mSeconds">&mdash;</span><span class="k">seconds to run</span></span>
+          <span class="t"><span class="v">0</span><span class="k">dependencies</span></span>
+        </div>
+      </div>
+      <div class="leader-art" data-reveal="60"><canvas id="leaderArt" aria-hidden="true"></canvas></div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true"><i></i> Scroll</div>
+  </section>
+
+  <!-- ---------------------------- 2. THE SPEND ------------------------ -->
+  <section class="scene" id="s-spend">
+    <div class="scene-in">
+      <div class="slug" data-reveal><i></i> <em>01</em> Why this problem</div>
+      <h2 class="display" data-reveal="60">
+        Marketing is <b>&#8377;1,105 crore</b> of Kuku&rsquo;s year.
+        <span class="q">Promo selection is a hand step sitting on top of it.</span>
+      </h2>
+
+      <div class="split">
+        <div>
+          <div class="bignum" data-reveal="120"><span data-count="3.03" data-dp="2">0.00</span><sub>&#8377; crore a day</sub></div>
+          <p class="lead" data-reveal="160">
+            Of &#8377;1,484 crore in FY26 revenue, <b>&#8377;1,105 crore went to
+            marketing</b> &mdash; 74.5% of revenue and 77.7% of all spend. A
+            microdrama app ships around <b>5,770 distinct ad creatives a
+            month</b>; one hit show has run 98,000. The teardown of the
+            biggest spender in the category is blunt about what wins: not
+            long videos about the plot, but under-one-minute clips of
+            exciting moments.
+          </p>
+          <div class="figrow" data-reveal="200">
+            <div class="fig"><div class="v">74.5%</div><div class="k">of revenue, spent on marketing</div></div>
+            <div class="fig"><div class="v">200&ndash;250</div><div class="k">shows a month, targeting 1,000</div></div>
+            <div class="fig"><div class="v">6.7%</div><div class="k">marketing spend that all salaries come to</div></div>
+          </div>
+          <p class="note" data-reveal="240">
+            Sources: RoC filings via Medianama and Entrackr for FY26;
+            SocialPeta &times; AMO Pictures, <i>Insight into Global Micro
+            Drama App Marketing</i>, 2026; Hollywood Reporter India. Figures
+            are theirs. The arithmetic on top of them is mine and is shown
+            in <b>docs/RESEARCH.md</b>.
+          </p>
+        </div>
+
+        <div data-reveal="140">
+          <div class="slug"><i></i> One month of creatives, one advertiser</div>
+          <div class="creative-field" id="creativeField" style="--cols:60" aria-hidden="true"></div>
+          <div class="field-cap">
+            <span><b>1,200</b> tiles shown, of ~5,770 a month</span>
+            <span><b>46</b> lit &mdash; roughly the share that carries the spend</span>
+          </div>
+          <p class="note">
+            The lit share is illustrative, not measured: I could not source a
+            real hit-rate for microdrama creatives, and I would rather say so
+            than put a number here that looks sourced. Everything else on
+            this page is read out of the run.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------------------------- 3. THE REEL ------------------------- -->
+  <section id="s-reel">
+    <div class="reel-track" id="reelTrack">
+      <div class="reel-sticky">
+        <div class="reel-head">
+          <div class="slug"><i></i> <em>02</em> The corpus</div>
+          <h2>Fifty episodes, <b>end to end</b>. Each frame is that
+            episode&rsquo;s own pressure curve &mdash; the per-second score the
+            ranker works from. Where it found a promo, the window is cut
+            into the frame.</h2>
+        </div>
+
+        <div class="reel-stage" id="reelStage"></div>
+
+        <div class="reel-read">
+          <div class="rr-no" id="rrNo">&mdash;</div>
+          <div>
+            <div class="rr-log" id="rrLog"></div>
+            <div class="reel-mix" id="rrMix" aria-hidden="true"></div>
+            <div class="reel-mixkey">beats by kind &mdash; dialogue, action, camera, sfx</div>
+          </div>
+          <div class="rr-stats" id="rrStats"></div>
+        </div>
+
+        <div class="reel-scrub">
+          <div class="sc">
+            <div class="ticks" id="reelTicks" aria-hidden="true"></div>
+            <div class="cursor" id="reelCursor" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------------------------- 4. PIPELINE ------------------------- -->
+  <section class="scene" id="s-pipe">
+    <div class="scene-in">
+      <div class="slug" data-reveal><i></i> <em>03</em> How it works</div>
+      <h2 class="display" data-reveal="60">
+        Taste is a model&rsquo;s job. <b>Arithmetic is not.</b>
+      </h2>
+      <p class="lead" data-reveal="100">
+        Where a clip starts and stops, how much dialogue is inside it, how
+        many names a stranger has to track &mdash; all countable, instantly,
+        for nothing, and impossible to get wrong. The model is spent only on
+        the part counting cannot judge, and it is
+        <b>never handed a timestamp field it could fill in</b>.
+      </p>
+
+      <div class="pipe" data-reveal="140">
+        <div class="pipe-rail"><i id="pipeRail"></i></div>
+        <div class="pipe-row">
+          <div class="pipe-st">
+            <span class="n">01</span><div class="dot"></div>
+            <div class="nm">parse</div>
+            <div class="ds">Screenplay to typed, timed beats. Fails loudly rather than guessing.</div>
+            <div class="out"><span data-v="mBeats">&mdash;</span> <span>beats</span></div>
+          </div>
+          <div class="pipe-st">
+            <span class="n">02</span><div class="dot"></div>
+            <div class="nm">signals</div>
+            <div class="ds">Seven lexicons and two collision guards score every beat, each recording which beat fired it.</div>
+            <div class="out"><span data-v="cTags">&mdash;</span> <span>actor directions</span></div>
+          </div>
+          <div class="pipe-st key">
+            <span class="n">03</span><div class="dot"></div>
+            <div class="nm">candidates</div>
+            <div class="ds">Every window with real beat boundaries at both ends, 20&ndash;60s, on five axes.</div>
+            <div class="out"><span data-v="mCands">&mdash;</span> <span>windows</span></div>
+          </div>
+          <div class="pipe-st key">
+            <span class="n">04</span><div class="dot"></div>
+            <div class="nm">verify</div>
+            <div class="ds">Eight grounding checks against the script. Runs before the model, so a broken cut never costs a call.</div>
+            <div class="out"><span data-v="mVerified">&mdash;</span> <span>passed</span></div>
+          </div>
+          <div class="pipe-st">
+            <span class="n">05</span><div class="dot"></div>
+            <div class="nm">judge</div>
+            <div class="ds">The top 25 go to a model for hook, cliff, standalone and the <i>why</i>. One env var swaps provider.</div>
+            <div class="out"><span data-v="mModel">&mdash;</span> <span>provider</span></div>
+          </div>
+          <div class="pipe-st">
+            <span class="n">06</span><div class="dot"></div>
+            <div class="nm">export</div>
+            <div class="ds">JSON, a CSV to schedule from, a cut sheet, and one CMX3600 EDL per promo.</div>
+            <div class="out"><span data-v="mTop">&mdash;</span> <span>EDLs</span></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="note" data-reveal="180">
+        <b>Standalone is the axis most tools skip</b>, and the reason good
+        scenes make bad promos. It counts speaking characters, phrases
+        pointing off-screen, and <i>series baggage</i> &mdash; a character
+        first met in episode 38 carries 37 episodes of history a cold viewer
+        does not have. <span data-v="cSpeakers">&mdash;</span> named speakers
+        across <span data-v="cScenes">&mdash;</span> scenes is a lot of
+        history to arrive in the middle of.
+      </p>
+    </div>
+  </section>
+
+  <!-- ---------------------------- 5. THE WALL ------------------------- -->
+  <section class="scene" id="s-wall">
+    <div class="scene-in">
+      <div class="slug" data-reveal><i></i> <em>04</em> Why it cannot invent a cut</div>
+      <h2 class="display" data-reveal="60">
+        Every timestamp this show can express.
+        <span class="q">The lit ones are the <span data-v="gStarts">&mdash;</span> that exist.</span>
+      </h2>
+      <p class="lead" data-reveal="100">
+        One cell per tenth of a second of screen time, fifty episodes laid
+        end to end. <b data-v="gStarts">&mdash;</b> cells are lit: real beat
+        starts, the only places a cut is allowed to land.
+        <b data-v="gDark">&mdash;</b> are dark. A model asked to write an
+        in-point in free text is sampling from the whole plate &mdash; which
+        is the entire reason this tool computes cut points and asks the model
+        only what it is actually good at.
+      </p>
+
+      <div class="wall-box" data-reveal="140">
+        <canvas id="wallCanvas" aria-hidden="true"></canvas>
+      </div>
+      <div class="wall-legend" data-reveal="170">
+        <span class="lg"><i style="background:#7170ff"></i>legal in-point &mdash; <b data-v="gStarts">&mdash;</b></span>
+        <span class="lg"><i style="background:#1E2030"></i>plausible, well-formatted, wrong &mdash; <b data-v="gDark">&mdash;</b></span>
+        <span class="lg">one cell = 0.1s &middot; episode order, left to right</span>
+      </div>
+
+      <div class="wall-callout" data-reveal="200">
+        <div class="pc"><span data-count="94.4" data-dp="1">0.0</span><em>%</em></div>
+        <p>
+          of free-hand in-points would be invalid. The cut points here are
+          computed and then re-checked against the script a second time
+          before anything is written, which is why the verifier has nothing
+          to report: <b data-v="mVerified">&mdash;</b> of
+          <b data-v="mCands">&mdash;</b> candidates pass, and the ones that
+          did not during the build are in the git history with the fixes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------------------------- 6. THE CUT LIST --------------------- -->
+  <section class="scene" id="s-cuts">
+    <div class="scene-in">
+      <div class="slug" data-reveal><i></i> <em>05</em> The cut list</div>
+      <h2 class="display" data-reveal="60">
+        <b data-v="mTop">&mdash;</b> promos, ranked.
+        <span class="q">Pick one up and the desk opens on it.</span>
+      </h2>
+      <p class="lead" data-reveal="100">
+        <span data-v="mShortest">&mdash;</span>s to
+        <span data-v="mLongest">&mdash;</span>s, across
+        <span data-v="mTouched">&mdash;</span> different episodes, no episode
+        used twice. The highlighted band is the promo window inside its
+        episode; the ticks along the base are the beats, coloured by kind.
+      </p>
+
+      <div class="sheet-stage" id="sheetStage" data-reveal="140">
+        <div class="sheet-grid" id="sheetGrid"></div>
+      </div>
+
+      <div class="enter-row" data-reveal="60">
+        <button class="enter" type="button" data-open-desk="0">
+          Open the review desk <span class="kbd">&rarr;</span>
+        </button>
+        <button class="hud-btn" type="button" id="flatten">Lay it flat</button>
+        <span class="enter-note">
+          The desk is the actual tool: a keyboard queue where an editor
+          approves, rejects, nudges an in-point by one beat boundary, and
+          exports the decisions. <span class="kbd mono">Esc</span> comes back here.
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------------------------- COLOPHON ---------------------------- -->
+  <footer class="colophon">
+    <div class="colophon-in">
+      <div class="cx">
+        <p>
+          <b>What this is.</b> Problem 1 of the Kuku AI Generalist
+          assignment: a tool that reads a microdrama screenplay and returns
+          ranked 20&ndash;60s promo clips with exact cut points, a hook, a
+          cliffhanger and a reason. Run with
+          <code>python -m cutlist run data/scripts</code>. No pip install, no
+          API key, no network. The write-up is <code>docs/SOLUTION.pdf</code>
+          and the raw outputs are in <code>out/</code>.
+        </p>
+        <p>
+          <b>Where it picks badly</b> is in the write-up rather than hidden:
+          it cannot see, so a silent held look scores near zero; spoilers are
+          unguarded; the stitched promos are the weakest output; and against
+          six episodes I hand-cut before running the tool on them it beats a
+          trivial &ldquo;last 40 seconds&rdquo; baseline only narrowly, 0.380
+          against 0.349 mean IoU. Measuring that is what found three real
+          bugs in the scorer.
+        </p>
+        <p>
+          <b>Built with Claude</b> (Claude Code), three research subagents,
+          and my own reading of the screenplays for the gold labels. It was
+          wrong in a way worth reporting: the first scoring function summed
+          every signal axis for every beat, so a line <i>screamed</i> in
+          terror scored 0.22, below a murmured question, because
+          physical-shock terms only fire on action beats. It looked
+          completely reasonable and was badly wrong.
+        </p>
+        <p>
+          <b>No stock imagery and no fabricated stills.</b> There is no video
+          of this show, so there are no pictures of it here. The frames are
+          the episodes&rsquo; own curves, the perforations are drawn from
+          SMPTE ST 139 Table 1, and the leader keeps SMPTE RP 428-6 timing.
+          The input pack is Kuku&rsquo;s own content, shared for this
+          assignment, so this page is not published anywhere.
+        </p>
+      </div>
+      <div class="stamp">
+        CUTLIST<br>
+        <span data-v="mShow">&mdash;</span><br>
+        run <span data-v="mGenerated">&mdash;</span><br>
+        <span data-v="mEpisodes">&mdash;</span> ep / <span data-v="mBeats">&mdash;</span> beats<br>
+        <span data-v="mCands">&mdash;</span> candidates / <span data-v="mTop">&mdash;</span> exported<br>
+        <span data-v="mStitched">&mdash;</span> stitched<br>
+        <span data-v="mSeconds">&mdash;</span>s / 0 deps
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<!-- ============================== ACT II ============================== -->
+<div id="desk">
+
+  <header class="topbar">
+    <div class="tb-left">
+      <button class="deskback" type="button" data-back-film>
+        <span class="kbd mono">Esc</span> Reel
+      </button>
+      <h1 class="show" id="showTitle">Promo Review Desk</h1>
+      <div class="stats" id="metaStats"></div>
+    </div>
+
+    <div class="tb-right">
+      <div class="legend" aria-label="Beat type legend">
+        <span class="lg"><i class="sw k-dialogue"></i>Dialogue</span>
+        <span class="lg"><i class="sw k-action"></i>Action</span>
+        <span class="lg"><i class="sw k-camera"></i>Camera</span>
+        <span class="lg"><i class="sw k-sfx"></i>SFX</span>
+      </div>
+      <span class="tb-rule"></span>
+      <div class="tally mono" id="tally"></div>
+      <button class="btn" id="exportBtn" type="button">Export decisions</button>
+      <button class="hint" id="hintBtn" type="button"><span class="kbd">&#8679;?</span> shortcuts</button>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <aside class="list-pane">
+      <div class="list-head">
+        <span id="listCount">&mdash;</span>
+        <span>Score</span>
+      </div>
+      <div class="list-scroll" id="promoList" role="listbox" aria-label="Ranked promos"></div>
+    </aside>
+
+    <section class="detail-pane">
+      <div class="detail-scroll" id="detail"></div>
+
+      <div class="actionbar">
+        <div class="chips">
+          <span class="chip"><b class="kbd">&crarr;</b>Approve</span>
+          <span class="chip"><b class="kbd">R</b>Reject</span>
+          <span class="chip"><b class="kbd">J</b><b class="kbd">K</b><b class="kbd">L</b>Scrub</span>
+          <span class="chip"><b class="kbd">I</b><b class="kbd">O</b>Nudge in/out</span>
+          <span class="chip"><b class="kbd">&#8984;K</b>Actions</span>
+        </div>
+        <div class="transport mono" id="transport"></div>
+      </div>
+    </section>
+  </main>
+
+</div>
+
+<!-- ============================== OVERLAYS ============================= -->
+<div class="overlay" id="shortcuts" hidden>
+  <div class="sheet card" role="dialog" aria-label="Keyboard shortcuts">
+    <div class="sheet-head"><span class="sect">Keyboard</span><span class="micro dim">Esc to close</span></div>
+    <div class="keygrid">
+      <div class="krow"><span class="keys"><b class="kbd">&uarr;</b><b class="kbd">&darr;</b></span>Move between promos</div>
+      <div class="krow"><span class="keys"><b class="kbd">&crarr;</b></span>Approve, advance to next</div>
+      <div class="krow"><span class="keys"><b class="kbd">R</b></span>Reject, advance to next</div>
+      <div class="krow"><span class="keys"><b class="kbd">U</b></span>Clear decision</div>
+      <div class="krow"><span class="keys"><b class="kbd">N</b></span>Next undecided</div>
+      <div class="krow"><span class="keys"><b class="kbd">Space</b></span>Play / pause</div>
+      <div class="krow"><span class="keys"><b class="kbd">L</b></span>Play forward &mdash; again for 2&times;, 4&times;</div>
+      <div class="krow"><span class="keys"><b class="kbd">K</b></span>Pause</div>
+      <div class="krow"><span class="keys"><b class="kbd">J</b></span>Reverse &mdash; again for 2&times;, 4&times;</div>
+      <div class="krow"><span class="keys"><b class="kbd">I</b></span>In-point later, one beat boundary</div>
+      <div class="krow"><span class="keys"><b class="kbd">&#8679;I</b></span>In-point earlier</div>
+      <div class="krow"><span class="keys"><b class="kbd">O</b></span>Out-point later, one beat boundary</div>
+      <div class="krow"><span class="keys"><b class="kbd">&#8679;O</b></span>Out-point earlier</div>
+      <div class="krow"><span class="keys"><b class="kbd">0</b></span>Reset trim to source window</div>
+      <div class="krow"><span class="keys"><b class="kbd">E</b></span>Export approved list as JSON</div>
+      <div class="krow"><span class="keys"><b class="kbd">&#8984;K</b></span>Actions</div>
+      <div class="krow"><span class="keys"><b class="kbd">Esc</b></span>Back to the reel</div>
+      <div class="krow"><span class="keys"><b class="kbd">&#8679;?</b></span>This panel</div>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="palette" hidden>
+  <div class="sheet card pal" role="dialog" aria-label="Actions">
+    <input id="palInput" class="pal-input" type="text" placeholder="Run an action&hellip;" autocomplete="off" spellcheck="false">
+    <div class="pal-list" id="palList"></div>
+  </div>
+</div>
+
+<!--
+  DATA SHIM. promos.js is written by the pipeline and does
+  `window.CUTLIST_DATA = {...}` so this page opens straight off the
+  filesystem, where fetch() of local JSON is blocked. app.js boots from that
+  global when it is defined and otherwise falls back to fetch('promos.json')
+  for when the page is served over http.
+
+  Load order matters: backdrop.js before reel.js (reel mounts it), and
+  app.js before reel.js (reel calls window.CUTLIST_DESK.focus when a frame
+  is picked up). Every one of them degrades rather than throws if an earlier
+  file is missing.
+-->
+<script src="promos.js"></script>
+<script src="backdrop.js"></script>
+<script src="app.js"></script>
+<script src="reel.js"></script>
+</body>
+</html>

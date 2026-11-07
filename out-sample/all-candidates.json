@@ -1,0 +1,2930 @@
+{
+  "meta": {
+    "show": "The Last Shift",
+    "episodes": 3,
+    "beats": 104,
+    "runtime_min": 4.6,
+    "candidates": 11,
+    "verified": 11,
+    "model": "offline",
+    "weights": {
+      "hook": 0.32,
+      "cliff": 0.26,
+      "intensity": 0.16,
+      "standalone": 0.18,
+      "shape": 0.08
+    },
+    "generated": "2026-11-08 01:43:10",
+    "seconds": 0.03,
+    "grounding": {
+      "beat_starts": 104,
+      "beat_ends": 104,
+      "expressible_timestamps": 2740,
+      "legal_start_fraction": 0.03796,
+      "pct_of_guesses_that_would_be_invalid": 96.2
+    },
+    "corpus": {
+      "emotion_tags": 46,
+      "speakers": 4,
+      "scenes": 3
+    }
+  },
+  "episodes": [
+    {
+      "number": 1,
+      "duration": 92.0,
+      "duration_tc": "01:32.00",
+      "logline": "On her last night shift before transferring wards, Nurse Priya Nair notices a dose on a patient's chart that she never administered, and realises someone has been writing in her handwriting.",
+      "scenes": 1,
+      "beats": 35,
+      "characters": [
+        "DR RAO",
+        "DR RAO (O.S.)",
+        "PRIYA"
+      ],
+      "mix": {
+        "DIALOGUE": 10,
+        "ACTION": 9,
+        "CAMERA": 11,
+        "SFX": 5
+      },
+      "starts": [
+        0,
+        4,
+        32,
+        56,
+        70,
+        86,
+        114,
+        142,
+        168,
+        192,
+        208,
+        236,
+        260,
+        286,
+        300,
+        330,
+        346,
+        384,
+        418,
+        456,
+        480,
+        496,
+        524,
+        560,
+        592,
+        616,
+        652,
+        690,
+        720,
+        736,
+        772,
+        804,
+        840,
+        864,
+        892
+      ],
+      "expressible": 920,
+      "profile": [
+        0,
+        0,
+        0,
+        14,
+        14,
+        14,
+        0,
+        0,
+        0,
+        0,
+        0,
+        14,
+        14,
+        14,
+        14,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        30,
+        30,
+        30,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        30,
+        30,
+        0,
+        0,
+        0,
+        24,
+        24,
+        24,
+        24,
+        0,
+        0,
+        0,
+        14,
+        14,
+        14,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        29,
+        29,
+        29,
+        0,
+        0,
+        0,
+        29,
+        29,
+        29,
+        29,
+        0,
+        0,
+        0,
+        0,
+        14,
+        14,
+        14,
+        14,
+        14,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        14,
+        14,
+        34,
+        34,
+        34,
+        34,
+        0,
+        0
+      ],
+      "profile_step": 1.0
+    },
+    {
+      "number": 2,
+      "duration": 84.0,
+      "duration_tc": "01:24.00",
+      "logline": "Priya takes the altered chart to the one colleague she trusts, and learns that the ward's night roster has been quietly rewritten to put her on shifts she never worked.",
+      "scenes": 1,
+      "beats": 32,
+      "characters": [
+        "PRIYA",
+        "SISTER FERNANDES"
+      ],
+      "mix": {
+        "DIALOGUE": 16,
+        "ACTION": 5,
+        "CAMERA": 9,
+        "SFX": 2
+      },
+      "starts": [
+        0,
+        28,
+        52,
+        80,
+        104,
+        118,
+        156,
+        184,
+        216,
+        240,
+        272,
+        296,
+        324,
+        340,
+        368,
+        396,
+        420,
+        456,
+        472,
+        500,
+        516,
+        544,
+        576,
+        604,
+        626,
+        644,
+        672,
+        704,
+        720,
+        756,
+        784,
+        816
+      ],
+      "expressible": 840,
+      "profile": [
+        69,
+        69,
+        69,
+        32,
+        32,
+        32,
+        0,
+        0,
+        14,
+        14,
+        37,
+        37,
+        14,
+        14,
+        14,
+        14,
+        0,
+        0,
+        0,
+        0,
+        0,
+        9,
+        9,
+        9,
+        0,
+        0,
+        0,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        30,
+        30,
+        30,
+        14,
+        14,
+        14,
+        58,
+        58,
+        58,
+        0,
+        0,
+        14,
+        14,
+        0,
+        0,
+        0,
+        0,
+        0,
+        14,
+        14,
+        14,
+        14,
+        14,
+        30,
+        30,
+        30,
+        0,
+        0,
+        43,
+        43,
+        43,
+        43,
+        0,
+        80,
+        80,
+        80,
+        80,
+        14,
+        14,
+        14,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "profile_step": 1.0
+    },
+    {
+      "number": 3,
+      "duration": 98.0,
+      "duration_tc": "01:38.00",
+      "logline": "Priya tries to leave the hospital with the evidence on her phone, and finds that the only way out of the car park is past the man whose name is on every countersignature.",
+      "scenes": 1,
+      "beats": 37,
+      "characters": [
+        "DR RAO",
+        "DR RAO (O.S.)",
+        "PRIYA"
+      ],
+      "mix": {
+        "DIALOGUE": 14,
+        "ACTION": 7,
+        "CAMERA": 11,
+        "SFX": 5
+      },
+      "starts": [
+        0,
+        6,
+        34,
+        62,
+        80,
+        108,
+        120,
+        138,
+        170,
+        202,
+        220,
+        256,
+        288,
+        304,
+        320,
+        352,
+        380,
+        404,
+        436,
+        468,
+        492,
+        524,
+        552,
+        584,
+        616,
+        634,
+        662,
+        694,
+        712,
+        748,
+        780,
+        812,
+        840,
+        856,
+        892,
+        924,
+        956
+      ],
+      "expressible": 980,
+      "profile": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        38,
+        38,
+        0,
+        0,
+        14,
+        14,
+        14,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        30,
+        30,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        14,
+        14,
+        14,
+        0,
+        14,
+        14,
+        14,
+        14,
+        0,
+        0,
+        14,
+        14,
+        14,
+        0,
+        0,
+        22,
+        22,
+        22,
+        30,
+        30,
+        30,
+        30,
+        0,
+        0,
+        14,
+        14,
+        14,
+        14,
+        0,
+        0,
+        14,
+        14,
+        14,
+        30,
+        30,
+        30,
+        0,
+        0,
+        14,
+        14,
+        14,
+        14,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        14,
+        14,
+        14,
+        14,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        14,
+        14,
+        14,
+        14,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "profile_step": 1.0
+    }
+  ],
+  "promos": [
+    {
+      "rank": 1,
+      "id": "P001",
+      "kind": "continuous",
+      "duration": 47.2,
+      "segments": [
+        {
+          "episode": 2,
+          "start": 0.0,
+          "end": 47.2,
+          "start_tc": "00:00.00",
+          "end_tc": "00:47.20",
+          "duration": 47.2
+        }
+      ],
+      "episodes": [
+        2
+      ],
+      "score_rules": 0.7624,
+      "score_final": 0.7624,
+      "scores": {
+        "hook": 0.69,
+        "cliff": 0.85,
+        "intensity": 0.694,
+        "standalone": 1.0,
+        "shape": 0.369
+      },
+      "model": {
+        "hook": 6.9,
+        "cliff": 8.5,
+        "standalone": 10.0,
+        "why": "Opens on priya slams her phone face-up on the table between them, har... and cuts before it is answered.",
+        "caption": "",
+        "risk": "scored by rules only - no model review",
+        "model": "offline"
+      },
+      "hook": {
+        "at": "00:00.00",
+        "episode": 2,
+        "kind": "ACTION",
+        "speaker": null,
+        "emotions": [],
+        "text": "Priya slams her phone face-up on the table between them, hard enough to rattle the cups."
+      },
+      "cliff": {
+        "at": "00:47.20",
+        "episode": 2,
+        "kind": "DIALOGUE",
+        "speaker": "PRIYA",
+        "text": "What was her name?"
+      },
+      "characters": [
+        "PRIYA",
+        "SISTER FERNANDES"
+      ],
+      "reasons": [
+        "hook: action: slams",
+        "out: ends on an unanswered question"
+      ],
+      "beats": [
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 0,
+          "kind": "ACTION",
+          "start": 0.0,
+          "end": 2.8,
+          "text": "Priya slams her phone face-up on the table between them, hard enough to rattle the cups.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:00.00",
+          "end_tc": "00:02.80"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 1,
+          "kind": "DIALOGUE",
+          "start": 2.8,
+          "end": 5.2,
+          "text": "Tell me that is not my handwriting.",
+          "speaker": "PRIYA",
+          "emotions": [
+            "urgent",
+            "not quite steady"
+          ],
+          "start_tc": "00:02.80",
+          "end_tc": "00:05.20"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 2,
+          "kind": "CAMERA",
+          "start": 5.2,
+          "end": 8.0,
+          "text": "Close-up on Sister Fernandes, reading, her face giving away nothing at all.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:05.20",
+          "end_tc": "00:08.00"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 3,
+          "kind": "DIALOGUE",
+          "start": 8.0,
+          "end": 10.4,
+          "text": "It is your handwriting.",
+          "speaker": "SISTER FERNANDES",
+          "emotions": [
+            "measured"
+          ],
+          "start_tc": "00:08.00",
+          "end_tc": "00:10.40"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 4,
+          "kind": "DIALOGUE",
+          "start": 10.4,
+          "end": 11.8,
+          "text": "It is not!",
+          "speaker": "PRIYA",
+          "emotions": [
+            "sharp"
+          ],
+          "start_tc": "00:10.40",
+          "end_tc": "00:11.80"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 5,
+          "kind": "DIALOGUE",
+          "start": 11.8,
+          "end": 15.6,
+          "text": "I did not say you wrote it. I said it is your handwriting. Those are two different sentences.",
+          "speaker": "SISTER FERNANDES",
+          "emotions": [
+            "level",
+            "final"
+          ],
+          "start_tc": "00:11.80",
+          "end_tc": "00:15.60"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 6,
+          "kind": "CAMERA",
+          "start": 15.6,
+          "end": 18.4,
+          "text": "Push-in on Priya as the distinction arrives.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:15.60",
+          "end_tc": "00:18.40"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 7,
+          "kind": "ACTION",
+          "start": 18.4,
+          "end": 21.6,
+          "text": "Fernandes stands, crosses to the noticeboard, and takes down the laminated night roster.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:18.40",
+          "end_tc": "00:21.60"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 8,
+          "kind": "DIALOGUE",
+          "start": 21.6,
+          "end": 24.0,
+          "text": "Look at the fourteenth.",
+          "speaker": "SISTER FERNANDES",
+          "emotions": [
+            "quiet"
+          ],
+          "start_tc": "00:21.60",
+          "end_tc": "00:24.00"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 9,
+          "kind": "CAMERA",
+          "start": 24.0,
+          "end": 27.2,
+          "text": "Insert on the roster. Priya's name, in the 4C column, on a night she was four hundred kilometres away.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:24.00",
+          "end_tc": "00:27.20"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 10,
+          "kind": "DIALOGUE",
+          "start": 27.2,
+          "end": 29.6,
+          "text": "I was at the wedding. There are two hundred photographs.",
+          "speaker": "PRIYA",
+          "emotions": [
+            "hollow"
+          ],
+          "start_tc": "00:27.20",
+          "end_tc": "00:29.60"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 11,
+          "kind": "DIALOGUE",
+          "start": 29.6,
+          "end": 32.8,
+          "text": "Photographs of you. Not of this ward. The roster says you were here.",
+          "speaker": "SISTER FERNANDES",
+          "emotions": [
+            "flat"
+          ],
+          "start_tc": "00:29.60",
+          "end_tc": "00:32.80"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 12,
+          "kind": "SFX",
+          "start": 32.4,
+          "end": 34.0,
+          "text": "A tap running in the next room, then stopping abruptly.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:32.40",
+          "end_tc": "00:34.00"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 13,
+          "kind": "ACTION",
+          "start": 34.0,
+          "end": 36.8,
+          "text": "Both women look at the door. Neither of them moves.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:34.00",
+          "end_tc": "00:36.80"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 14,
+          "kind": "CAMERA",
+          "start": 36.8,
+          "end": 39.6,
+          "text": "Two-shot, held, the door behind them slightly ajar.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:36.80",
+          "end_tc": "00:39.60"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 15,
+          "kind": "DIALOGUE",
+          "start": 39.6,
+          "end": 42.0,
+          "text": "How long has this been going on?",
+          "speaker": "PRIYA",
+          "emotions": [
+            "low"
+          ],
+          "start_tc": "00:39.60",
+          "end_tc": "00:42.00"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 16,
+          "kind": "DIALOGUE",
+          "start": 42.0,
+          "end": 45.6,
+          "text": "There was a girl before you. Agency. She stopped coming in and nobody filled in a form about it.",
+          "speaker": "SISTER FERNANDES",
+          "emotions": [
+            "reluctant"
+          ],
+          "start_tc": "00:42.00",
+          "end_tc": "00:45.60"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 17,
+          "kind": "DIALOGUE",
+          "start": 45.6,
+          "end": 47.2,
+          "text": "What was her name?",
+          "speaker": "PRIYA",
+          "emotions": [
+            "cold"
+          ],
+          "start_tc": "00:45.60",
+          "end_tc": "00:47.20"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "id": "P002",
+      "kind": "continuous",
+      "duration": 22.6,
+      "segments": [
+        {
+          "episode": 3,
+          "start": 43.6,
+          "end": 66.2,
+          "start_tc": "00:43.60",
+          "end_tc": "01:06.20",
+          "duration": 22.6
+        }
+      ],
+      "episodes": [
+        3
+      ],
+      "score_rules": 0.6614,
+      "score_final": 0.6614,
+      "scores": {
+        "hook": 0.255,
+        "cliff": 0.85,
+        "intensity": 0.687,
+        "standalone": 1.0,
+        "shape": 0.86
+      },
+      "model": {
+        "hook": 2.5,
+        "cliff": 8.5,
+        "standalone": 10.0,
+        "why": "Opens on then you will have noticed the signage changed on monday. ev... and cuts before it is answered.",
+        "caption": "",
+        "risk": "scored by rules only - no model review",
+        "model": "offline"
+      },
+      "hook": {
+        "at": "00:43.60",
+        "episode": 3,
+        "kind": "DIALOGUE",
+        "speaker": "DR RAO",
+        "emotions": [
+          "reasonable"
+        ],
+        "text": "Then you will have noticed the signage changed on Monday. Everything changes, Priya."
+      },
+      "cliff": {
+        "at": "01:06.20",
+        "episode": 3,
+        "kind": "CAMERA",
+        "speaker": null,
+        "text": "Close-up on Rao as he looks past her, at the car, and then back."
+      },
+      "characters": [
+        "DR RAO",
+        "PRIYA"
+      ],
+      "reasons": [
+        "hook: reveal: will",
+        "out: ends on an unanswered question"
+      ],
+      "beats": [
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 18,
+          "kind": "DIALOGUE",
+          "start": 43.6,
+          "end": 46.8,
+          "text": "Then you will have noticed the signage changed on Monday. Everything changes, Priya.",
+          "speaker": "DR RAO",
+          "emotions": [
+            "reasonable"
+          ],
+          "start_tc": "00:43.60",
+          "end_tc": "00:46.80"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 19,
+          "kind": "DIALOGUE",
+          "start": 46.8,
+          "end": 49.2,
+          "text": "Who is Anjali Mehra?",
+          "speaker": "PRIYA",
+          "emotions": [
+            "direct"
+          ],
+          "start_tc": "00:46.80",
+          "end_tc": "00:49.20"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 20,
+          "kind": "CAMERA",
+          "start": 49.2,
+          "end": 52.4,
+          "text": "Extreme close-up on Rao. The pleasantness does not leave his face, which is worse.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:49.20",
+          "end_tc": "00:52.40"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 21,
+          "kind": "DIALOGUE",
+          "start": 52.4,
+          "end": 55.2,
+          "text": "A very careless young woman who signed things she had not read.",
+          "speaker": "DR RAO",
+          "emotions": [
+            "mild"
+          ],
+          "start_tc": "00:52.40",
+          "end_tc": "00:55.20"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 22,
+          "kind": "ACTION",
+          "start": 55.2,
+          "end": 58.4,
+          "text": "He holds out the folder. Priya does not take it.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:55.20",
+          "end_tc": "00:58.40"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 23,
+          "kind": "DIALOGUE",
+          "start": 58.4,
+          "end": 61.6,
+          "text": "Three signatures and you can go home and none of this was ever your problem.",
+          "speaker": "DR RAO",
+          "emotions": [
+            "gently"
+          ],
+          "start_tc": "00:58.40",
+          "end_tc": "01:01.60"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 24,
+          "kind": "DIALOGUE",
+          "start": 61.6,
+          "end": 63.4,
+          "text": "And if I do not?",
+          "speaker": "PRIYA",
+          "emotions": [
+            "steady"
+          ],
+          "start_tc": "01:01.60",
+          "end_tc": "01:03.40"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 25,
+          "kind": "CAMERA",
+          "start": 63.4,
+          "end": 66.2,
+          "text": "Close-up on Rao as he looks past her, at the car, and then back.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:03.40",
+          "end_tc": "01:06.20"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "id": "P003",
+      "kind": "continuous",
+      "duration": 26.8,
+      "segments": [
+        {
+          "episode": 1,
+          "start": 65.2,
+          "end": 92.0,
+          "start_tc": "01:05.20",
+          "end_tc": "01:32.00",
+          "duration": 26.8
+        }
+      ],
+      "episodes": [
+        1
+      ],
+      "score_rules": 0.6393,
+      "score_final": 0.6393,
+      "scores": {
+        "hook": 0.335,
+        "cliff": 0.84,
+        "intensity": 0.571,
+        "standalone": 0.949,
+        "shape": 0.644
+      },
+      "model": {
+        "hook": 3.4,
+        "cliff": 8.4,
+        "standalone": 9.5,
+        "why": "Opens on if i call it in, the only name on every one of those pages i... and cuts before it is answered.",
+        "caption": "",
+        "risk": "scored by rules only - no model review",
+        "model": "offline"
+      },
+      "hook": {
+        "at": "01:05.20",
+        "episode": 1,
+        "kind": "DIALOGUE",
+        "speaker": "PRIYA",
+        "emotions": [
+          "to herself",
+          "dawning"
+        ],
+        "text": "If I call it in, the only name on every one of those pages is mine."
+      },
+      "cliff": {
+        "at": "01:32.00",
+        "episode": 1,
+        "kind": "CAMERA",
+        "speaker": null,
+        "text": "Extreme close-up on Priya's face, holding, as she does not move. Cut to black."
+      },
+      "characters": [
+        "PRIYA",
+        "DR RAO (O.S.)",
+        "DR RAO"
+      ],
+      "reasons": [
+        "hook: threat: mine",
+        "out: holds on a reaction instead of an answer; lands on the episode's own cliffhanger"
+      ],
+      "beats": [
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 26,
+          "kind": "DIALOGUE",
+          "start": 65.2,
+          "end": 69.0,
+          "text": "If I call it in, the only name on every one of those pages is mine.",
+          "speaker": "PRIYA",
+          "emotions": [
+            "to herself",
+            "dawning"
+          ],
+          "start_tc": "01:05.20",
+          "end_tc": "01:09.00"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 27,
+          "kind": "CAMERA",
+          "start": 69.0,
+          "end": 72.4,
+          "text": "Slow push-in on Priya's face as the understanding lands.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:09.00",
+          "end_tc": "01:12.40"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 28,
+          "kind": "SFX",
+          "start": 72.0,
+          "end": 73.6,
+          "text": "A footstep behind her, deliberate, unhurried.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:12.00",
+          "end_tc": "01:13.60"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 29,
+          "kind": "DIALOGUE",
+          "start": 73.6,
+          "end": 77.2,
+          "text": "You are here late, Priya. I thought Thursday was your last one.",
+          "speaker": "DR RAO (O.S.)",
+          "emotions": [
+            "warm",
+            "pleasant"
+          ],
+          "start_tc": "01:13.60",
+          "end_tc": "01:17.20"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 30,
+          "kind": "ACTION",
+          "start": 77.2,
+          "end": 80.4,
+          "text": "Priya turns. Her hand closes around the phone in her pocket.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:17.20",
+          "end_tc": "01:20.40"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 31,
+          "kind": "CAMERA",
+          "start": 80.4,
+          "end": 84.0,
+          "text": "Over-the-shoulder on Dr Rao in the doorway, still in his coat, car keys in his hand at two in the morning.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:20.40",
+          "end_tc": "01:24.00"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 32,
+          "kind": "DIALOGUE",
+          "start": 84.0,
+          "end": 86.4,
+          "text": "It is. I was just finishing the charts.",
+          "speaker": "PRIYA",
+          "emotions": [
+            "carefully"
+          ],
+          "start_tc": "01:24.00",
+          "end_tc": "01:26.40"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 33,
+          "kind": "DIALOGUE",
+          "start": 86.4,
+          "end": 89.2,
+          "text": "Good. Leave them on my desk and I will sign them off for you.",
+          "speaker": "DR RAO",
+          "emotions": [
+            "smiling",
+            "unhurried"
+          ],
+          "start_tc": "01:26.40",
+          "end_tc": "01:29.20"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 34,
+          "kind": "CAMERA",
+          "start": 89.2,
+          "end": 92.0,
+          "text": "Extreme close-up on Priya's face, holding, as she does not move. Cut to black.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:29.20",
+          "end_tc": "01:32.00"
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "id": "P004",
+      "kind": "continuous",
+      "duration": 21.6,
+      "segments": [
+        {
+          "episode": 2,
+          "start": 45.6,
+          "end": 67.2,
+          "start_tc": "00:45.60",
+          "end_tc": "01:07.20",
+          "duration": 21.6
+        }
+      ],
+      "episodes": [
+        2
+      ],
+      "score_rules": 0.7443,
+      "score_final": 0.7443,
+      "scores": {
+        "hook": 0.669,
+        "cliff": 0.85,
+        "intensity": 0.552,
+        "standalone": 0.949,
+        "shape": 0.625
+      },
+      "model": {
+        "hook": 6.7,
+        "cliff": 8.5,
+        "standalone": 9.5,
+        "why": "Opens on what was her name?... and cuts before it is answered.",
+        "caption": "",
+        "risk": "scored by rules only - no model review",
+        "model": "offline"
+      },
+      "hook": {
+        "at": "00:45.60",
+        "episode": 2,
+        "kind": "DIALOGUE",
+        "speaker": "PRIYA",
+        "emotions": [
+          "cold"
+        ],
+        "text": "What was her name?"
+      },
+      "cliff": {
+        "at": "01:07.20",
+        "episode": 2,
+        "kind": "CAMERA",
+        "speaker": null,
+        "text": "Fernandes does not answer. She looks at the door again."
+      },
+      "characters": [
+        "PRIYA",
+        "SISTER FERNANDES"
+      ],
+      "reasons": [
+        "hook: delivery: cold",
+        "out: ends on an unanswered question"
+      ],
+      "beats": [
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 17,
+          "kind": "DIALOGUE",
+          "start": 45.6,
+          "end": 47.2,
+          "text": "What was her name?",
+          "speaker": "PRIYA",
+          "emotions": [
+            "cold"
+          ],
+          "start_tc": "00:45.60",
+          "end_tc": "00:47.20"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 18,
+          "kind": "CAMERA",
+          "start": 47.2,
+          "end": 50.0,
+          "text": "Close-up on Fernandes, deciding.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:47.20",
+          "end_tc": "00:50.00"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 19,
+          "kind": "DIALOGUE",
+          "start": 50.0,
+          "end": 51.6,
+          "text": "Mehra.",
+          "speaker": "SISTER FERNANDES",
+          "emotions": [
+            "barely audible"
+          ],
+          "start_tc": "00:50.00",
+          "end_tc": "00:51.60"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 20,
+          "kind": "ACTION",
+          "start": 51.6,
+          "end": 54.4,
+          "text": "Priya puts both hands flat on the table and leans on them.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:51.60",
+          "end_tc": "00:54.40"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 21,
+          "kind": "CAMERA",
+          "start": 54.4,
+          "end": 57.6,
+          "text": "Extreme close-up on Priya's eyes as the name lands against the one on the drug log.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:54.40",
+          "end_tc": "00:57.60"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 22,
+          "kind": "DIALOGUE",
+          "start": 57.6,
+          "end": 60.4,
+          "text": "A. Mehra countersigned a dose eleven days ago.",
+          "speaker": "PRIYA",
+          "emotions": [
+            "precise"
+          ],
+          "start_tc": "00:57.60",
+          "end_tc": "01:00.40"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 23,
+          "kind": "DIALOGUE",
+          "start": 60.4,
+          "end": 62.6,
+          "text": "That is not possible.",
+          "speaker": "SISTER FERNANDES",
+          "emotions": [
+            "stricken"
+          ],
+          "start_tc": "01:00.40",
+          "end_tc": "01:02.60"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 24,
+          "kind": "DIALOGUE",
+          "start": 62.6,
+          "end": 64.4,
+          "text": "Why is it not possible?",
+          "speaker": "PRIYA",
+          "emotions": [
+            "hard"
+          ],
+          "start_tc": "01:02.60",
+          "end_tc": "01:04.40"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 25,
+          "kind": "CAMERA",
+          "start": 64.4,
+          "end": 67.2,
+          "text": "Fernandes does not answer. She looks at the door again.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:04.40",
+          "end_tc": "01:07.20"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "id": "P005",
+      "kind": "stitched",
+      "duration": 26.6,
+      "segments": [
+        {
+          "episode": 2,
+          "start": 72.0,
+          "end": 84.0,
+          "start_tc": "01:12.00",
+          "end_tc": "01:24.00",
+          "duration": 12.0
+        },
+        {
+          "episode": 1,
+          "start": 11.4,
+          "end": 26.0,
+          "start_tc": "00:11.40",
+          "end_tc": "00:26.00",
+          "duration": 14.6
+        }
+      ],
+      "episodes": [
+        1,
+        2
+      ],
+      "score_rules": 0.6907,
+      "score_final": 0.6907,
+      "scores": {
+        "hook": 0.805,
+        "cliff": 0.85,
+        "intensity": 0.306,
+        "standalone": 0.82,
+        "shape": 0.194
+      },
+      "model": {
+        "hook": 8.1,
+        "cliff": 8.5,
+        "standalone": 8.2,
+        "why": "Opens on darkness reaches the staff room. fernandes grabs priya's wri... and cuts before it is answered.",
+        "caption": "",
+        "risk": "scored by rules only - no model review",
+        "model": "offline"
+      },
+      "hook": {
+        "at": "01:12.00",
+        "episode": 2,
+        "kind": "ACTION",
+        "speaker": null,
+        "emotions": [],
+        "text": "Darkness reaches the staff room. Fernandes grabs Priya's wrist hard enough to hurt."
+      },
+      "cliff": {
+        "at": "00:26.00",
+        "episode": 1,
+        "kind": "DIALOGUE",
+        "speaker": "PRIYA",
+        "text": "Who is A. Mehra?"
+      },
+      "characters": [
+        "SISTER FERNANDES",
+        "PRIYA"
+      ],
+      "reasons": [
+        "hook: action: grabs (ep 2)",
+        "out: unresolved beat from ep 1"
+      ],
+      "beats": [
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 28,
+          "kind": "ACTION",
+          "start": 72.0,
+          "end": 75.6,
+          "text": "Darkness reaches the staff room. Fernandes grabs Priya's wrist hard enough to hurt.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:12.00",
+          "end_tc": "01:15.60"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 29,
+          "kind": "DIALOGUE",
+          "start": 75.6,
+          "end": 78.4,
+          "text": "Do not let him sign anything with your name on it.",
+          "speaker": "SISTER FERNANDES",
+          "emotions": [
+            "whispered",
+            "fast"
+          ],
+          "start_tc": "01:15.60",
+          "end_tc": "01:18.40"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 30,
+          "kind": "CAMERA",
+          "start": 78.4,
+          "end": 81.6,
+          "text": "Close-up on the two women in the dark, the emergency light blinking green above them.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:18.40",
+          "end_tc": "01:21.60"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 31,
+          "kind": "CAMERA",
+          "start": 81.6,
+          "end": 84.0,
+          "text": "The door opens behind them. Cut to black.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:21.60",
+          "end_tc": "01:24.00"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 6,
+          "kind": "DIALOGUE",
+          "start": 11.4,
+          "end": 14.2,
+          "text": "I was at my sister's wedding on Tuesday.",
+          "speaker": "PRIYA",
+          "emotions": [
+            "quiet",
+            "hardening"
+          ],
+          "start_tc": "00:11.40",
+          "end_tc": "00:14.20"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 7,
+          "kind": "CAMERA",
+          "start": 14.2,
+          "end": 16.8,
+          "text": "Wide shot of the empty ward, six beds, one occupied, the corridor light cutting across the floor.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:14.20",
+          "end_tc": "00:16.80"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 8,
+          "kind": "ACTION",
+          "start": 16.8,
+          "end": 19.6,
+          "text": "Priya crosses to the medication cabinet and pulls the log drawer. It slides open far too easily.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:16.80",
+          "end_tc": "00:19.60"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 9,
+          "kind": "SFX",
+          "start": 19.2,
+          "end": 20.8,
+          "text": "The drawer runner knocks against its stop.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:19.20",
+          "end_tc": "00:20.80"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 10,
+          "kind": "CAMERA",
+          "start": 20.8,
+          "end": 23.6,
+          "text": "Close-up on the log sheet. Four entries. The last one is countersigned by a name she does not recognise.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:20.80",
+          "end_tc": "00:23.60"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 11,
+          "kind": "DIALOGUE",
+          "start": 23.6,
+          "end": 26.0,
+          "text": "Who is A. Mehra?",
+          "speaker": "PRIYA",
+          "emotions": [
+            "reading",
+            "uneasy"
+          ],
+          "start_tc": "00:23.60",
+          "end_tc": "00:26.00"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "id": "P006",
+      "kind": "stitched",
+      "duration": 26.8,
+      "segments": [
+        {
+          "episode": 2,
+          "start": 0.0,
+          "end": 11.8,
+          "start_tc": "00:00.00",
+          "end_tc": "00:11.80",
+          "duration": 11.8
+        },
+        {
+          "episode": 1,
+          "start": 14.2,
+          "end": 29.2,
+          "start_tc": "00:14.20",
+          "end_tc": "00:29.20",
+          "duration": 15.0
+        }
+      ],
+      "episodes": [
+        1,
+        2
+      ],
+      "score_rules": 0.6671,
+      "score_final": 0.6671,
+      "scores": {
+        "hook": 0.69,
+        "cliff": 0.85,
+        "intensity": 0.38,
+        "standalone": 0.82,
+        "shape": 0.212
+      },
+      "model": {
+        "hook": 6.9,
+        "cliff": 8.5,
+        "standalone": 8.2,
+        "why": "Opens on priya slams her phone face-up on the table between them, har... and cuts before it is answered.",
+        "caption": "",
+        "risk": "scored by rules only - no model review",
+        "model": "offline"
+      },
+      "hook": {
+        "at": "00:00.00",
+        "episode": 2,
+        "kind": "ACTION",
+        "speaker": null,
+        "emotions": [],
+        "text": "Priya slams her phone face-up on the table between them, hard enough to rattle the cups."
+      },
+      "cliff": {
+        "at": "00:29.20",
+        "episode": 1,
+        "kind": "ACTION",
+        "speaker": null,
+        "text": "She photographs the page with her phone. The flash fires before she can stop it and the whole ward goes white for an instant."
+      },
+      "characters": [
+        "PRIYA",
+        "SISTER FERNANDES"
+      ],
+      "reasons": [
+        "hook: action: slams (ep 2)",
+        "out: unresolved beat from ep 1"
+      ],
+      "beats": [
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 0,
+          "kind": "ACTION",
+          "start": 0.0,
+          "end": 2.8,
+          "text": "Priya slams her phone face-up on the table between them, hard enough to rattle the cups.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:00.00",
+          "end_tc": "00:02.80"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 1,
+          "kind": "DIALOGUE",
+          "start": 2.8,
+          "end": 5.2,
+          "text": "Tell me that is not my handwriting.",
+          "speaker": "PRIYA",
+          "emotions": [
+            "urgent",
+            "not quite steady"
+          ],
+          "start_tc": "00:02.80",
+          "end_tc": "00:05.20"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 2,
+          "kind": "CAMERA",
+          "start": 5.2,
+          "end": 8.0,
+          "text": "Close-up on Sister Fernandes, reading, her face giving away nothing at all.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:05.20",
+          "end_tc": "00:08.00"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 3,
+          "kind": "DIALOGUE",
+          "start": 8.0,
+          "end": 10.4,
+          "text": "It is your handwriting.",
+          "speaker": "SISTER FERNANDES",
+          "emotions": [
+            "measured"
+          ],
+          "start_tc": "00:08.00",
+          "end_tc": "00:10.40"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 4,
+          "kind": "DIALOGUE",
+          "start": 10.4,
+          "end": 11.8,
+          "text": "It is not!",
+          "speaker": "PRIYA",
+          "emotions": [
+            "sharp"
+          ],
+          "start_tc": "00:10.40",
+          "end_tc": "00:11.80"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 7,
+          "kind": "CAMERA",
+          "start": 14.2,
+          "end": 16.8,
+          "text": "Wide shot of the empty ward, six beds, one occupied, the corridor light cutting across the floor.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:14.20",
+          "end_tc": "00:16.80"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 8,
+          "kind": "ACTION",
+          "start": 16.8,
+          "end": 19.6,
+          "text": "Priya crosses to the medication cabinet and pulls the log drawer. It slides open far too easily.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:16.80",
+          "end_tc": "00:19.60"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 9,
+          "kind": "SFX",
+          "start": 19.2,
+          "end": 20.8,
+          "text": "The drawer runner knocks against its stop.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:19.20",
+          "end_tc": "00:20.80"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 10,
+          "kind": "CAMERA",
+          "start": 20.8,
+          "end": 23.6,
+          "text": "Close-up on the log sheet. Four entries. The last one is countersigned by a name she does not recognise.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:20.80",
+          "end_tc": "00:23.60"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 11,
+          "kind": "DIALOGUE",
+          "start": 23.6,
+          "end": 26.0,
+          "text": "Who is A. Mehra?",
+          "speaker": "PRIYA",
+          "emotions": [
+            "reading",
+            "uneasy"
+          ],
+          "start_tc": "00:23.60",
+          "end_tc": "00:26.00"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 12,
+          "kind": "ACTION",
+          "start": 26.0,
+          "end": 29.2,
+          "text": "She photographs the page with her phone. The flash fires before she can stop it and the whole ward goes white for an instant.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:26.00",
+          "end_tc": "00:29.20"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 13,
+          "kind": "SFX",
+          "start": 28.6,
+          "end": 30.0,
+          "text": "A door latch, somewhere down the corridor.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:28.60",
+          "end_tc": "00:30.00"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "id": "P007",
+      "kind": "continuous",
+      "duration": 29.0,
+      "segments": [
+        {
+          "episode": 3,
+          "start": 20.2,
+          "end": 49.2,
+          "start_tc": "00:20.20",
+          "end_tc": "00:49.20",
+          "duration": 29.0
+        }
+      ],
+      "episodes": [
+        3
+      ],
+      "score_rules": 0.6494,
+      "score_final": 0.6494,
+      "scores": {
+        "hook": 0.343,
+        "cliff": 0.85,
+        "intensity": 0.601,
+        "standalone": 0.949,
+        "shape": 0.647
+      },
+      "model": {
+        "hook": 3.4,
+        "cliff": 8.5,
+        "standalone": 9.5,
+        "why": "Opens on who has been in my car?... and cuts before it is answered.",
+        "caption": "",
+        "risk": "scored by rules only - no model review",
+        "model": "offline"
+      },
+      "hook": {
+        "at": "00:20.20",
+        "episode": 3,
+        "kind": "DIALOGUE",
+        "speaker": "PRIYA",
+        "emotions": [
+          "quiet",
+          "frightened"
+        ],
+        "text": "Who has been in my car?"
+      },
+      "cliff": {
+        "at": "00:49.20",
+        "episode": 3,
+        "kind": "DIALOGUE",
+        "speaker": "PRIYA",
+        "text": "Who is Anjali Mehra?"
+      },
+      "characters": [
+        "PRIYA",
+        "DR RAO (O.S.)",
+        "DR RAO"
+      ],
+      "reasons": [
+        "hook: opens on movement",
+        "out: ends on an unanswered question"
+      ],
+      "beats": [
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 9,
+          "kind": "DIALOGUE",
+          "start": 20.2,
+          "end": 22.0,
+          "text": "Who has been in my car?",
+          "speaker": "PRIYA",
+          "emotions": [
+            "quiet",
+            "frightened"
+          ],
+          "start_tc": "00:20.20",
+          "end_tc": "00:22.00"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 10,
+          "kind": "ACTION",
+          "start": 22.0,
+          "end": 25.6,
+          "text": "She approaches, phone raised, and stops a metre short. Her bag has been emptied across the passenger seat.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:22.00",
+          "end_tc": "00:25.60"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 11,
+          "kind": "CAMERA",
+          "start": 25.6,
+          "end": 28.8,
+          "text": "Insert: the contents, arranged, not scattered. Her ID badge placed carefully on top, face up.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:25.60",
+          "end_tc": "00:28.80"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 12,
+          "kind": "DIALOGUE",
+          "start": 28.8,
+          "end": 30.4,
+          "text": "That is a message.",
+          "speaker": "PRIYA",
+          "emotions": [
+            "barely"
+          ],
+          "start_tc": "00:28.80",
+          "end_tc": "00:30.40"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 13,
+          "kind": "SFX",
+          "start": 30.4,
+          "end": 32.0,
+          "text": "A single pair of footsteps, unhurried, starting somewhere behind the pillars.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:30.40",
+          "end_tc": "00:32.00"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 14,
+          "kind": "DIALOGUE",
+          "start": 32.0,
+          "end": 35.2,
+          "text": "I moved it for you. You were blocking the ambulance bay.",
+          "speaker": "DR RAO (O.S.)",
+          "emotions": [
+            "pleasant"
+          ],
+          "start_tc": "00:32.00",
+          "end_tc": "00:35.20"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 15,
+          "kind": "ACTION",
+          "start": 35.2,
+          "end": 38.0,
+          "text": "Priya does not turn around. Her thumb finds the record button by feel.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:35.20",
+          "end_tc": "00:38.00"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 16,
+          "kind": "DIALOGUE",
+          "start": 38.0,
+          "end": 40.4,
+          "text": "I have been parking in 112 for six years.",
+          "speaker": "PRIYA",
+          "emotions": [
+            "carefully even"
+          ],
+          "start_tc": "00:38.00",
+          "end_tc": "00:40.40"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 17,
+          "kind": "CAMERA",
+          "start": 40.4,
+          "end": 43.6,
+          "text": "Dr Rao steps out from behind the pillar into the sodium light, still holding the chart folder.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:40.40",
+          "end_tc": "00:43.60"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 18,
+          "kind": "DIALOGUE",
+          "start": 43.6,
+          "end": 46.8,
+          "text": "Then you will have noticed the signage changed on Monday. Everything changes, Priya.",
+          "speaker": "DR RAO",
+          "emotions": [
+            "reasonable"
+          ],
+          "start_tc": "00:43.60",
+          "end_tc": "00:46.80"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 19,
+          "kind": "DIALOGUE",
+          "start": 46.8,
+          "end": 49.2,
+          "text": "Who is Anjali Mehra?",
+          "speaker": "PRIYA",
+          "emotions": [
+            "direct"
+          ],
+          "start_tc": "00:46.80",
+          "end_tc": "00:49.20"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "id": "P008",
+      "kind": "continuous",
+      "duration": 21.4,
+      "segments": [
+        {
+          "episode": 2,
+          "start": 62.6,
+          "end": 84.0,
+          "start_tc": "01:02.60",
+          "end_tc": "01:24.00",
+          "duration": 21.4
+        }
+      ],
+      "episodes": [
+        2
+      ],
+      "score_rules": 0.6221,
+      "score_final": 0.6221,
+      "scores": {
+        "hook": 0.343,
+        "cliff": 0.84,
+        "intensity": 0.414,
+        "standalone": 0.949,
+        "shape": 0.712
+      },
+      "model": {
+        "hook": 3.4,
+        "cliff": 8.4,
+        "standalone": 9.5,
+        "why": "Opens on why is it not possible?... and cuts before it is answered.",
+        "caption": "",
+        "risk": "scored by rules only - no model review",
+        "model": "offline"
+      },
+      "hook": {
+        "at": "01:02.60",
+        "episode": 2,
+        "kind": "DIALOGUE",
+        "speaker": "PRIYA",
+        "emotions": [
+          "hard"
+        ],
+        "text": "Why is it not possible?"
+      },
+      "cliff": {
+        "at": "01:24.00",
+        "episode": 2,
+        "kind": "CAMERA",
+        "speaker": null,
+        "text": "The door opens behind them. Cut to black."
+      },
+      "characters": [
+        "PRIYA",
+        "SISTER FERNANDES"
+      ],
+      "reasons": [
+        "hook: opens on movement",
+        "out: holds on a reaction instead of an answer; lands on the episode's own cliffhanger"
+      ],
+      "beats": [
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 24,
+          "kind": "DIALOGUE",
+          "start": 62.6,
+          "end": 64.4,
+          "text": "Why is it not possible?",
+          "speaker": "PRIYA",
+          "emotions": [
+            "hard"
+          ],
+          "start_tc": "01:02.60",
+          "end_tc": "01:04.40"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 25,
+          "kind": "CAMERA",
+          "start": 64.4,
+          "end": 67.2,
+          "text": "Fernandes does not answer. She looks at the door again.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:04.40",
+          "end_tc": "01:07.20"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 26,
+          "kind": "DIALOGUE",
+          "start": 67.2,
+          "end": 70.8,
+          "text": "Because Anjali Mehra has been dead since March.",
+          "speaker": "SISTER FERNANDES",
+          "emotions": [
+            "finally"
+          ],
+          "start_tc": "01:07.20",
+          "end_tc": "01:10.80"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 27,
+          "kind": "SFX",
+          "start": 70.4,
+          "end": 72.0,
+          "text": "The corridor lights cutting out, one bank at a time, towards the door.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:10.40",
+          "end_tc": "01:12.00"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 28,
+          "kind": "ACTION",
+          "start": 72.0,
+          "end": 75.6,
+          "text": "Darkness reaches the staff room. Fernandes grabs Priya's wrist hard enough to hurt.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:12.00",
+          "end_tc": "01:15.60"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 29,
+          "kind": "DIALOGUE",
+          "start": 75.6,
+          "end": 78.4,
+          "text": "Do not let him sign anything with your name on it.",
+          "speaker": "SISTER FERNANDES",
+          "emotions": [
+            "whispered",
+            "fast"
+          ],
+          "start_tc": "01:15.60",
+          "end_tc": "01:18.40"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 30,
+          "kind": "CAMERA",
+          "start": 78.4,
+          "end": 81.6,
+          "text": "Close-up on the two women in the dark, the emergency light blinking green above them.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:18.40",
+          "end_tc": "01:21.60"
+        },
+        {
+          "episode": 2,
+          "scene": 1,
+          "index": 31,
+          "kind": "CAMERA",
+          "start": 81.6,
+          "end": 84.0,
+          "text": "The door opens behind them. Cut to black.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:21.60",
+          "end_tc": "01:24.00"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "id": "P009",
+      "kind": "continuous",
+      "duration": 36.4,
+      "segments": [
+        {
+          "episode": 3,
+          "start": 61.6,
+          "end": 98.0,
+          "start_tc": "01:01.60",
+          "end_tc": "01:38.00",
+          "duration": 36.4
+        }
+      ],
+      "episodes": [
+        3
+      ],
+      "score_rules": 0.5996,
+      "score_final": 0.5996,
+      "scores": {
+        "hook": 0.343,
+        "cliff": 0.84,
+        "intensity": 0.355,
+        "standalone": 1.0,
+        "shape": 0.434
+      },
+      "model": {
+        "hook": 3.4,
+        "cliff": 8.4,
+        "standalone": 10.0,
+        "why": "Opens on and if i do not?... and cuts before it is answered.",
+        "caption": "",
+        "risk": "scored by rules only - no model review",
+        "model": "offline"
+      },
+      "hook": {
+        "at": "01:01.60",
+        "episode": 3,
+        "kind": "DIALOGUE",
+        "speaker": "PRIYA",
+        "emotions": [
+          "steady"
+        ],
+        "text": "And if I do not?"
+      },
+      "cliff": {
+        "at": "01:38.00",
+        "episode": 3,
+        "kind": "CAMERA",
+        "speaker": null,
+        "text": "Freeze on her face in the oncoming light. Cut to black."
+      },
+      "characters": [
+        "PRIYA",
+        "DR RAO",
+        "DR RAO (O.S.)"
+      ],
+      "reasons": [
+        "hook: opens on movement",
+        "out: holds on a reaction instead of an answer; lands on the episode's own cliffhanger"
+      ],
+      "beats": [
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 24,
+          "kind": "DIALOGUE",
+          "start": 61.6,
+          "end": 63.4,
+          "text": "And if I do not?",
+          "speaker": "PRIYA",
+          "emotions": [
+            "steady"
+          ],
+          "start_tc": "01:01.60",
+          "end_tc": "01:03.40"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 25,
+          "kind": "CAMERA",
+          "start": 63.4,
+          "end": 66.2,
+          "text": "Close-up on Rao as he looks past her, at the car, and then back.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:03.40",
+          "end_tc": "01:06.20"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 26,
+          "kind": "DIALOGUE",
+          "start": 66.2,
+          "end": 69.8,
+          "text": "Then on Monday a review board reads eleven months of your handwriting.",
+          "speaker": "DR RAO",
+          "emotions": [
+            "still pleasant"
+          ],
+          "start_tc": "01:06.20",
+          "end_tc": "01:09.80"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 27,
+          "kind": "SFX",
+          "start": 69.4,
+          "end": 71.2,
+          "text": "The basement strip lights buzzing, one of them failing in and out.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:09.40",
+          "end_tc": "01:11.20"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 28,
+          "kind": "ACTION",
+          "start": 71.2,
+          "end": 74.8,
+          "text": "Priya takes the folder. Rao's hand does not let go of the other end.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:11.20",
+          "end_tc": "01:14.80"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 29,
+          "kind": "CAMERA",
+          "start": 74.8,
+          "end": 78.0,
+          "text": "Two-shot, both hands on the folder, neither of them moving.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:14.80",
+          "end_tc": "01:18.00"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 30,
+          "kind": "DIALOGUE",
+          "start": 78.0,
+          "end": 81.2,
+          "text": "I photographed the drug log before you got to it.",
+          "speaker": "PRIYA",
+          "emotions": [
+            "very quiet"
+          ],
+          "start_tc": "01:18.00",
+          "end_tc": "01:21.20"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 31,
+          "kind": "CAMERA",
+          "start": 81.2,
+          "end": 84.4,
+          "text": "Close-up on Rao. The pleasantness finally goes.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:21.20",
+          "end_tc": "01:24.40"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 32,
+          "kind": "SFX",
+          "start": 84.0,
+          "end": 85.6,
+          "text": "Tyres on the ramp above, braking hard.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:24.00",
+          "end_tc": "01:25.60"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 33,
+          "kind": "ACTION",
+          "start": 85.6,
+          "end": 89.2,
+          "text": "Headlights sweep the basement wall. Rao lets go of the folder and steps back into the dark between the pillars.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:25.60",
+          "end_tc": "01:29.20"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 34,
+          "kind": "DIALOGUE",
+          "start": 89.2,
+          "end": 92.4,
+          "text": "Then you should not have come back for your car.",
+          "speaker": "DR RAO (O.S.)",
+          "emotions": [
+            "unreadable"
+          ],
+          "start_tc": "01:29.20",
+          "end_tc": "01:32.40"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 35,
+          "kind": "CAMERA",
+          "start": 92.4,
+          "end": 95.6,
+          "text": "Priya turns towards the headlights, folder clutched to her chest, eyes wide.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:32.40",
+          "end_tc": "01:35.60"
+        },
+        {
+          "episode": 3,
+          "scene": 1,
+          "index": 36,
+          "kind": "CAMERA",
+          "start": 95.6,
+          "end": 98.0,
+          "text": "Freeze on her face in the oncoming light. Cut to black.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:35.60",
+          "end_tc": "01:38.00"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "id": "P010",
+      "kind": "continuous",
+      "duration": 44.2,
+      "segments": [
+        {
+          "episode": 1,
+          "start": 33.0,
+          "end": 77.2,
+          "start_tc": "00:33.00",
+          "end_tc": "01:17.20",
+          "duration": 44.2
+        }
+      ],
+      "episodes": [
+        1
+      ],
+      "score_rules": 0.5204,
+      "score_final": 0.5204,
+      "scores": {
+        "hook": 0.343,
+        "cliff": 0.685,
+        "intensity": 0.244,
+        "standalone": 1.0,
+        "shape": 0.17
+      },
+      "model": {
+        "hook": 3.4,
+        "cliff": 6.9,
+        "standalone": 10.0,
+        "why": "Opens on hello?... and cuts before it is answered.",
+        "caption": "",
+        "risk": "scored by rules only - no model review",
+        "model": "offline"
+      },
+      "hook": {
+        "at": "00:33.00",
+        "episode": 1,
+        "kind": "DIALOGUE",
+        "speaker": "PRIYA",
+        "emotions": [
+          "whispered"
+        ],
+        "text": "Hello?"
+      },
+      "cliff": {
+        "at": "01:17.20",
+        "episode": 1,
+        "kind": "DIALOGUE",
+        "speaker": "DR RAO (O.S.)",
+        "text": "You are here late, Priya. I thought Thursday was your last one."
+      },
+      "characters": [
+        "PRIYA",
+        "DR RAO (O.S.)"
+      ],
+      "reasons": [
+        "hook: opens on movement",
+        "out: holds on a reaction instead of an answer"
+      ],
+      "beats": [
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 15,
+          "kind": "DIALOGUE",
+          "start": 33.0,
+          "end": 34.6,
+          "text": "Hello?",
+          "speaker": "PRIYA",
+          "emotions": [
+            "whispered"
+          ],
+          "start_tc": "00:33.00",
+          "end_tc": "00:34.60"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 16,
+          "kind": "ACTION",
+          "start": 34.6,
+          "end": 38.4,
+          "text": "No answer. She lowers the phone slowly and slides the drawer shut with the flat of her hand.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:34.60",
+          "end_tc": "00:38.40"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 17,
+          "kind": "CAMERA",
+          "start": 38.4,
+          "end": 41.8,
+          "text": "Low-angle shot down the corridor. Empty. The fire door at the far end is swinging, barely.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:38.40",
+          "end_tc": "00:41.80"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 18,
+          "kind": "ACTION",
+          "start": 41.8,
+          "end": 45.6,
+          "text": "Priya walks the length of the ward, checks the door, and finds it propped with a folded paper cup.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:41.80",
+          "end_tc": "00:45.60"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 19,
+          "kind": "DIALOGUE",
+          "start": 45.6,
+          "end": 48.0,
+          "text": "Somebody is coming in through here.",
+          "speaker": "PRIYA",
+          "emotions": [
+            "flat",
+            "certain"
+          ],
+          "start_tc": "00:45.60",
+          "end_tc": "00:48.00"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 20,
+          "kind": "SFX",
+          "start": 48.0,
+          "end": 49.6,
+          "text": "Lift doors closing, two floors down.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:48.00",
+          "end_tc": "00:49.60"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 21,
+          "kind": "CAMERA",
+          "start": 49.6,
+          "end": 52.4,
+          "text": "Close-up on the paper cup in her palm. Lipstick on the rim. Priya does not wear lipstick.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:49.60",
+          "end_tc": "00:52.40"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 22,
+          "kind": "ACTION",
+          "start": 52.4,
+          "end": 56.0,
+          "text": "She pockets it, returns to Mr Khanna's bed and checks his cannula against the chart one more time.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:52.40",
+          "end_tc": "00:56.00"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 23,
+          "kind": "CAMERA",
+          "start": 56.0,
+          "end": 59.2,
+          "text": "Insert: the cannula line, and a second puncture mark two centimetres above it, already bruising.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:56.00",
+          "end_tc": "00:59.20"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 24,
+          "kind": "DIALOGUE",
+          "start": 59.2,
+          "end": 61.6,
+          "text": "That is not mine either.",
+          "speaker": "PRIYA",
+          "emotions": [
+            "shaken"
+          ],
+          "start_tc": "00:59.20",
+          "end_tc": "01:01.60"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 25,
+          "kind": "ACTION",
+          "start": 61.6,
+          "end": 65.2,
+          "text": "Priya reaches for the emergency call button and stops with her thumb a centimetre away from it.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:01.60",
+          "end_tc": "01:05.20"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 26,
+          "kind": "DIALOGUE",
+          "start": 65.2,
+          "end": 69.0,
+          "text": "If I call it in, the only name on every one of those pages is mine.",
+          "speaker": "PRIYA",
+          "emotions": [
+            "to herself",
+            "dawning"
+          ],
+          "start_tc": "01:05.20",
+          "end_tc": "01:09.00"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 27,
+          "kind": "CAMERA",
+          "start": 69.0,
+          "end": 72.4,
+          "text": "Slow push-in on Priya's face as the understanding lands.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:09.00",
+          "end_tc": "01:12.40"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 28,
+          "kind": "SFX",
+          "start": 72.0,
+          "end": 73.6,
+          "text": "A footstep behind her, deliberate, unhurried.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "01:12.00",
+          "end_tc": "01:13.60"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 29,
+          "kind": "DIALOGUE",
+          "start": 73.6,
+          "end": 77.2,
+          "text": "You are here late, Priya. I thought Thursday was your last one.",
+          "speaker": "DR RAO (O.S.)",
+          "emotions": [
+            "warm",
+            "pleasant"
+          ],
+          "start_tc": "01:13.60",
+          "end_tc": "01:17.20"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "id": "P011",
+      "kind": "continuous",
+      "duration": 22.8,
+      "segments": [
+        {
+          "episode": 1,
+          "start": 3.2,
+          "end": 26.0,
+          "start_tc": "00:03.20",
+          "end_tc": "00:26.00",
+          "duration": 22.8
+        }
+      ],
+      "episodes": [
+        1
+      ],
+      "score_rules": 0.4589,
+      "score_final": 0.4589,
+      "scores": {
+        "hook": 0.159,
+        "cliff": 0.85,
+        "intensity": 0.17,
+        "standalone": 0.72,
+        "shape": 0.379
+      },
+      "model": {
+        "hook": 1.6,
+        "cliff": 8.5,
+        "standalone": 7.2,
+        "why": "Opens on i did not give him that.... and cuts before it is answered.",
+        "caption": "",
+        "risk": "scored by rules only - no model review",
+        "model": "offline"
+      },
+      "hook": {
+        "at": "00:03.20",
+        "episode": 1,
+        "kind": "DIALOGUE",
+        "speaker": "PRIYA",
+        "emotions": [
+          "low",
+          "disbelieving"
+        ],
+        "text": "I did not give him that."
+      },
+      "cliff": {
+        "at": "00:26.00",
+        "episode": 1,
+        "kind": "DIALOGUE",
+        "speaker": "PRIYA",
+        "text": "Who is A. Mehra?"
+      },
+      "characters": [
+        "PRIYA"
+      ],
+      "reasons": [
+        "hook: opens on movement",
+        "out: ends on an unanswered question"
+      ],
+      "beats": [
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 2,
+          "kind": "DIALOGUE",
+          "start": 3.2,
+          "end": 5.6,
+          "text": "I did not give him that.",
+          "speaker": "PRIYA",
+          "emotions": [
+            "low",
+            "disbelieving"
+          ],
+          "start_tc": "00:03.20",
+          "end_tc": "00:05.60"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 3,
+          "kind": "CAMERA",
+          "start": 5.6,
+          "end": 8.0,
+          "text": "Push-in on the signature box: her initials, in her own loop, in ink that is not hers.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:05.60",
+          "end_tc": "00:08.00"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 4,
+          "kind": "SFX",
+          "start": 7.0,
+          "end": 8.6,
+          "text": "A cardiac monitor ticking, steady, slightly too loud.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:07.00",
+          "end_tc": "00:08.60"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 5,
+          "kind": "ACTION",
+          "start": 8.6,
+          "end": 11.4,
+          "text": "She flips back three pages. The same initials appear on Tuesday, on a night she was not in the building.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:08.60",
+          "end_tc": "00:11.40"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 6,
+          "kind": "DIALOGUE",
+          "start": 11.4,
+          "end": 14.2,
+          "text": "I was at my sister's wedding on Tuesday.",
+          "speaker": "PRIYA",
+          "emotions": [
+            "quiet",
+            "hardening"
+          ],
+          "start_tc": "00:11.40",
+          "end_tc": "00:14.20"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 7,
+          "kind": "CAMERA",
+          "start": 14.2,
+          "end": 16.8,
+          "text": "Wide shot of the empty ward, six beds, one occupied, the corridor light cutting across the floor.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:14.20",
+          "end_tc": "00:16.80"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 8,
+          "kind": "ACTION",
+          "start": 16.8,
+          "end": 19.6,
+          "text": "Priya crosses to the medication cabinet and pulls the log drawer. It slides open far too easily.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:16.80",
+          "end_tc": "00:19.60"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 9,
+          "kind": "SFX",
+          "start": 19.2,
+          "end": 20.8,
+          "text": "The drawer runner knocks against its stop.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:19.20",
+          "end_tc": "00:20.80"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 10,
+          "kind": "CAMERA",
+          "start": 20.8,
+          "end": 23.6,
+          "text": "Close-up on the log sheet. Four entries. The last one is countersigned by a name she does not recognise.",
+          "speaker": null,
+          "emotions": [],
+          "start_tc": "00:20.80",
+          "end_tc": "00:23.60"
+        },
+        {
+          "episode": 1,
+          "scene": 1,
+          "index": 11,
+          "kind": "DIALOGUE",
+          "start": 23.6,
+          "end": 26.0,
+          "text": "Who is A. Mehra?",
+          "speaker": "PRIYA",
+          "emotions": [
+            "reading",
+            "uneasy"
+          ],
+          "start_tc": "00:23.60",
+          "end_tc": "00:26.00"
+        }
+      ]
+    }
+  ]
+}

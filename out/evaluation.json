@@ -1,0 +1,248 @@
+{
+  "gold_set": {
+    "episodes": [
+      2,
+      9,
+      18,
+      31,
+      41,
+      48
+    ],
+    "note": "labelled by hand from the screenplay before running the tool on these episodes",
+    "labels": {
+      "2": {
+        "window": "00:00.00-00:30.50",
+        "why": "'I cannot marry you' through to 'She is what I should have chosen'"
+      },
+      "9": {
+        "window": "01:28.00-01:51.20",
+        "why": "the rumour of a living Duke, out on a whispered 'Impossible.'"
+      },
+      "18": {
+        "window": "01:05.80-01:30.00",
+        "why": "she runs back into the fire for the ledger; the beam comes down"
+      },
+      "31": {
+        "window": "02:11.00-02:35.20",
+        "why": "'Enough!' into Catherine burning her mother's book"
+      },
+      "41": {
+        "window": "00:54.80-01:33.50",
+        "why": "'You needed an entire chapel...' out on the cathedral exploding"
+      },
+      "48": {
+        "window": "00:02.40-00:26.50",
+        "why": "Catherine's 'ten days' speech, out on 'doors can be closed from the other side'"
+      }
+    }
+  },
+  "systems": {
+    "cutlist": {
+      "mean_iou": 0.38,
+      "mean_gold_covered": 0.425,
+      "hits_at_iou_50": "2/6"
+    },
+    "last-40s": {
+      "mean_iou": 0.349,
+      "mean_gold_covered": 0.5,
+      "hits_at_iou_50": "3/6"
+    },
+    "densest-dialogue": {
+      "mean_iou": 0.09,
+      "mean_gold_covered": 0.133,
+      "hits_at_iou_50": "0/6"
+    },
+    "random": {
+      "mean_iou": 0.015,
+      "mean_gold_covered": 0.026,
+      "hits_at_iou_50": "0/6"
+    }
+  },
+  "per_episode": {
+    "cutlist": {
+      "2": {
+        "pick": "00:00.00-00:27.40",
+        "gold": "00:00.00-00:30.50",
+        "iou": 0.898,
+        "gold_covered": 0.898
+      },
+      "9": {
+        "pick": "00:06.30-00:35.80",
+        "gold": "01:28.00-01:51.20",
+        "iou": 0.0,
+        "gold_covered": 0.0
+      },
+      "18": {
+        "pick": "00:58.00-01:21.50",
+        "gold": "01:05.80-01:30.00",
+        "iou": 0.491,
+        "gold_covered": 0.649
+      },
+      "31": {
+        "pick": "01:17.80-01:43.30",
+        "gold": "02:11.00-02:35.20",
+        "iou": 0.0,
+        "gold_covered": 0.0
+      },
+      "41": {
+        "pick": "00:01.80-00:22.80",
+        "gold": "00:54.80-01:33.50",
+        "iou": 0.0,
+        "gold_covered": 0.0
+      },
+      "48": {
+        "pick": "00:02.40-00:29.50",
+        "gold": "00:02.40-00:26.50",
+        "iou": 0.889,
+        "gold_covered": 1.0
+      }
+    },
+    "last-40s": {
+      "2": {
+        "pick": "01:09.40-01:50.00",
+        "gold": "00:00.00-00:30.50",
+        "iou": 0.0,
+        "gold_covered": 0.0
+      },
+      "9": {
+        "pick": "01:15.10-01:55.50",
+        "gold": "01:28.00-01:51.20",
+        "iou": 0.574,
+        "gold_covered": 1.0
+      },
+      "18": {
+        "pick": "02:25.80-03:12.00",
+        "gold": "01:05.80-01:30.00",
+        "iou": 0.0,
+        "gold_covered": 0.0
+      },
+      "31": {
+        "pick": "01:58.40-02:40.00",
+        "gold": "02:11.00-02:35.20",
+        "iou": 0.582,
+        "gold_covered": 1.0
+      },
+      "41": {
+        "pick": "00:54.80-01:36.09",
+        "gold": "00:54.80-01:33.50",
+        "iou": 0.937,
+        "gold_covered": 1.0
+      },
+      "48": {
+        "pick": "00:39.20-01:20.00",
+        "gold": "00:02.40-00:26.50",
+        "iou": 0.0,
+        "gold_covered": 0.0
+      }
+    },
+    "densest-dialogue": {
+      "2": {
+        "pick": "00:51.60-01:12.70",
+        "gold": "00:00.00-00:30.50",
+        "iou": 0.0,
+        "gold_covered": 0.0
+      },
+      "9": {
+        "pick": "01:14.50-01:41.00",
+        "gold": "01:28.00-01:51.20",
+        "iou": 0.354,
+        "gold_covered": 0.56
+      },
+      "18": {
+        "pick": "02:38.00-02:59.50",
+        "gold": "01:05.80-01:30.00",
+        "iou": 0.0,
+        "gold_covered": 0.0
+      },
+      "31": {
+        "pick": "00:29.30-00:52.00",
+        "gold": "02:11.00-02:35.20",
+        "iou": 0.0,
+        "gold_covered": 0.0
+      },
+      "41": {
+        "pick": "00:43.80-01:04.00",
+        "gold": "00:54.80-01:33.50",
+        "iou": 0.185,
+        "gold_covered": 0.238
+      },
+      "48": {
+        "pick": "00:39.20-01:00.60",
+        "gold": "00:02.40-00:26.50",
+        "iou": 0.0,
+        "gold_covered": 0.0
+      }
+    },
+    "random": {
+      "2": {
+        "pick": "01:00.60-01:50.00",
+        "gold": "00:00.00-00:30.50",
+        "iou": 0.0,
+        "gold_covered": 0.0
+      },
+      "9": {
+        "pick": "00:28.80-01:14.80",
+        "gold": "01:28.00-01:51.20",
+        "iou": 0.0,
+        "gold_covered": 0.0
+      },
+      "18": {
+        "pick": "00:26.50-00:57.80",
+        "gold": "01:05.80-01:30.00",
+        "iou": 0.0,
+        "gold_covered": 0.0
+      },
+      "31": {
+        "pick": "00:13.80-01:07.40",
+        "gold": "02:11.00-02:35.20",
+        "iou": 0.0,
+        "gold_covered": 0.0
+      },
+      "41": {
+        "pick": "00:26.80-01:00.80",
+        "gold": "00:54.80-01:33.50",
+        "iou": 0.09,
+        "gold_covered": 0.155
+      },
+      "48": {
+        "pick": "00:34.20-01:04.00",
+        "gold": "00:02.40-00:26.50",
+        "iou": 0.0,
+        "gold_covered": 0.0
+      }
+    }
+  },
+  "ablation": {
+    "hook": {
+      "mean_iou_without": 0.498,
+      "delta": 0.118
+    },
+    "cliff": {
+      "mean_iou_without": 0.231,
+      "delta": -0.149
+    },
+    "intensity": {
+      "mean_iou_without": 0.364,
+      "delta": -0.016
+    },
+    "standalone": {
+      "mean_iou_without": 0.498,
+      "delta": 0.118
+    },
+    "shape": {
+      "mean_iou_without": 0.37,
+      "delta": -0.01
+    }
+  },
+  "weight_stability": {
+    "trials": 20,
+    "mean_share_of_picks_unchanged_under_+-20%_weights": 0.983
+  },
+  "hallucination_surface": {
+    "beat_starts": 3419,
+    "beat_ends": 3321,
+    "expressible_timestamps": 61612,
+    "legal_start_fraction": 0.05549,
+    "pct_of_guesses_that_would_be_invalid": 94.45
+  }
+}
